@@ -1,0 +1,116 @@
+senha wifi, 5180453103111360
+
+. princípios:
+	1. site moderno, atrativo, responsivo e objetivo;
+	2. recuso-me a desenvolver um site tao horroroso quanto as referencias nacionais;
+	3. desenvolvimento objetivo, rápido, eficiente e perfeccionista.
+
+Metas 27.05
+
+- sites referencia,
+	redefocoh, tratamentoonline, líderes em centros terapêuticos no Brasil;
+	GitHub, líder em usabilidade, ergonomia e tecnologia em desenvolvimento de sites no mundo;
+	https://www.ebpnl.com.br/ (botão wpp), https://www.abriem.com.br/ (aparecimento automatico),
+	https://febract.org.br/portal/, https://www.uniad.org.br/, centralizadores de conteúdo exemplar;
+
+- escolha das ferramentas para o desenvolvimento:
+	Bootstrap,  https://strapi.io/blog/bootstrap-vs-tailwind-css-a-comparison-of-top-css-frameworks
+	sublime-text,   https://tailwindcss.com/docs/editor-setup 
+
+ 	
+> pagina esboço com projeto CSS de template pré-definido;
+	setup kit dev completo,
+	escolha de um CSS template adequado,
+	incorporação no projeto,
+
+ok.
+
+Metas 28.05 // impossibilidade de trabalho, dia das psicologas
+
+- alteração pontual de componentes do site, 
+
+- adição configuracoes JS 
+	carrousel primerband logos, https://github.com/;
+	whatsapp + contato com rolagem dinâmica, https://redefocoh.com/; 
+
+ok. 
+
+
+29.05 >> 01.06 // trabalho embarreirado pela maravilhosa e mágica 'entrega das marmitas'
+
+- adicao de video de impacto, ~ok.
+	Script: An impactful video relating the chemical dependance (e.g. smoking, injecting, sniffing), alcoholism, with familial, personal, matrimonial, and professional disruptive and profound suffering, possibly causing in death, prison or isolation in homeleess situation, finishing with a breath of hope, rescue, love, and LIFE through therapies, conversation, self-knowledge, psychology, a higher power, and the power of collectiveness for strong social bounds and full recovery of life breaking up the chains.
+
+(faltou imagem com as correntes) ok
+
+- alterações pontuais, 
+	imagem de fundo, seções 
+		"Meu Trabalho" -> serviços, Testemunhos, Carrosel GitHub/EBPNL, Categorias de produtos/Galerias*	
+	mapa "onde encontrar"*, botão contato funcionando;
+
+ok.
+
+- alterações na paleta do layout,
+	nav bar preto claro, fosco na hero;
+	Após, seção de testemunhos, e então, logo abaixo, primer-band carrousel;
+	leve transição ao azul escuro, ou algum tom de formalidade, ao transitar à seção de Serviços;
+	down-arrow-link mais sutil;
+	cores mais escuras, transmitindo certo peso emocional;
+	Foto à esquerda, David, apresentando seus serviços;
+	letras mais vívidas em dourado, cor de ouro denso, transmitindo autoridade;
+	
+	ok.
+
+
+ok
+
+
+01.06 > 02.06
+
+- adicao da logo, 
+- adicionar seção impactante, e.g. video ou números, indicando o tempo de serviço;
+- finalização versão 1 template website, prontificar adição de conteúdos;
+ok
+
+02.06 > 03.06
+
+- imagens mais relacionadas ao tema da dependência química na área de categoria de trabalhos;
+	e então, galeria dos Serviços, categorias, indicando entusiástica paleta de ferramentas contra o vício;
+
+- Nessa galeria, os "produtos" devem relatar a possibilidade ao familiar e/ou ao adicto de ascenção espiritual, física e mental, das profundezas da vida ativa, em escravidão, à libertação e restauração da própria vida
+
+	1. mão cósmica, buscando o adicto em seu resgate;
+	2. resistência do adicto, frente a inerente busca;
+	3. após ser achado, o adicto descobre uma nova luz;
+	4. dias frios e chuvosos virão, mas valerão a pena;
+	5. uma nova vida é descoberta, com a incorporação daquela força cósmica que o buscou.
+
+ok.
+
+04.06
+
+
+- adição conteúdo pessoal;
+- paginas adicionais, como 'projetos', 'sobre', 'contato', 'produtos', etc.
+- adicionar possibilidade video na hero page;
+- galeria com videos em popup;
+
+- aprimorar código da página, organização, perfumarias, manutenabilidade;
+- botão enviar funcionando;
+
+> Ajudando pessoas em casos Extremos! slogan
+
+
+0x.06
+
+- integracao do website com o servico de dominio e hospedagem,
+- botão enviar email funcionando;
+
+
+
+/**/
+Sonho que se sonha só é só um sonho que se sonha só, reflexão; mas sonho que se sonha junto é realidade.
+Não sou infinito, após fazer tudo que imaginaria fazer, haverão coisas que não tenho certeza sobre o realizado: material de expansão!
+
+Mas a persistência faz vencer as resistências, a dureza que se é em andar sobre o lodo pesado, de deixar ir. Honestamente, de dentro pra fora.
+

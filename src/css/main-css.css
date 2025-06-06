@@ -1,0 +1,1411 @@
+
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2em;
+  color: #707070;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+a {
+  transition: all 0.3s ease;
+  color: #38B;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #D40;
+}
+
+a:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 8px 32px;
+}
+
+.btn:hover {
+  background-color: #ced4da;
+}
+
+blockquote {
+  font-size: 0.86em;
+  line-height: 1.8em;
+}
+
+.tm-section-pad-top {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tm-content-box {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.tm-text-primary {
+  color: #37A;
+}
+
+.tm-font-big {
+  font-size: 1.25rem;
+}
+
+.tm-btn-primary {
+  color: white;
+  background-color: #369;
+  padding: 14px 30px;
+}
+
+.tm-btn-primary:hover,
+.tm-btn-primary:focus {
+  color: white;
+  background-color: #38B;
+}
+
+
+/* Logo */ 
+
+.tm-logo {
+    height: 40px; 
+    width: auto; 
+    max-height: 100%; 
+    vertical-align: middle; 
+    transition: all 0.3s ease; /* Smooth transition for any changes, e.g., on scroll */
+}
+
+/* Optional: Adjust logo size when the navbar scrolls (if it gets smaller) */
+.tm-navbar.scroll .tm-logo {
+    height: 30px; /* Make it slightly smaller when scrolled */
+}
+
+/* Navigation bar */
+
+.tm-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.tm-navbar.scroll {
+    /* Changed to a semi-transparent very dark gray/black */
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust opacity (0.7 to 0.9) as needed */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border for distinction */
+}
+
+.navbar-brand {
+    color: white; /* Stays white when at top */
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover,
+.tm-navbar.scroll .navbar-brand:hover {
+    color: #FFEA00; /* Your brighter gold for hover */
+}
+
+.tm-navbar.scroll .navbar-brand {
+    color: #FFEA00; /* Gold when scrolled down */
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.tm-nav-link {
+    color: white; /* Stays white when at top */
+}
+
+.tm-navbar.scroll .tm-nav-link {
+    color: white; /* Stays white when scrolled down, for contrast */
+}
+
+.tm-navbar.scroll .tm-nav-link:hover,
+.tm-navbar.scroll .tm-nav-link.current,
+.tm-nav-link:hover {
+    color: #000; /* Text darkens on hover when scrolled for better contrast on gold background */
+    background-color: #FFEA00; /* Gold background on hover */
+}
+
+.navbar-toggler {
+    border: 1px solid white; /* Stays white when at top */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-toggler-icon {
+    color: white; /* Stays white when at top */
+    padding-top: 6px;
+}
+
+.tm-navbar.scroll .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Muted white border for scrolled state */
+}
+
+.tm-navbar.scroll .navbar-toggler-icon {
+    color: rgba(255, 255, 255, 0.8); /* Muted white icon for scrolled state */
+}
+
+/* introduction elements */
+
+#introduction {
+  padding-bottom: 100px;
+}
+
+.tm-section-title {
+  font-size: 2.6rem;
+  font-weight: normal;
+}
+
+.tm-intro-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tm-icon {
+  display: block;
+  color: #37A;
+}
+
+.tm-continue {
+    padding: 20px 0 30px 0;
+}
+
+
+/* Hero Section */
+
+#infinite {
+    background-color: #222; /* Fallback color */
+    background-image: url(../img/infinite-loop-01.jpg); /* Your background image */
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+
+    /* Ensure it takes full viewport height */
+    min-height: 100vh; /* This is crucial for full vertical fill */
+
+    /* Position for the overlay */
+    position: relative; /* Essential for the ::before overlay */
+
+    /* Flexbox properties for internal content layout */
+    display: flex;
+    flex-direction: column; /* Stacks navigation, content wrapper, and arrow */
+    justify-content: space-between; /* Distributes space vertically */
+    padding-top: 0; /* Remove any default padding that might affect full height */
+    padding-bottom: 0; /* Remove any default padding */
+
+    /* Additional styles you might have for this section */
+    /* e.g., margin: 0; if there's any unwanted space */
+}
+
+/* Your ::before pseudo-element for the overlay */
+#infinite::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent overlay */
+    z-index: 1; /* Place it above the background image but below the text */
+}
+
+@media (max-width: 1000px) {
+  #infinite {
+    background-size: auto;
+    background-position: center;
+  }
+}
+
+
+
+@media (max-height: 480px) {
+  .tm-hero-text-container-inner {
+    margin-top: -40px;
+  }
+
+  .tm-intro-next {
+    bottom: 20px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .tm-intro-text-container {
+    padding-left: 0px;
+  }
+
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .navbar-nav {
+    max-width: 200px;
+    text-align: right;
+  }
+
+  .navbar-collapse {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 3px;
+  }
+
+  .navbar-collapse .nav-link {
+    color: #707070;
+    padding-right: 20px;
+  }
+}
+
+/* Style for the wrapper containing hero text and video */
+.tm-hero-content-wrapper {
+    flex-grow: 1; /* Allows it to expand and take available space */
+    display: flex;
+    flex-direction: column; /* Stacks text and video vertically */
+    justify-content: center; /* Vertically center content block */
+    align-items: center; /* Horizontally center content block */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width/height */
+    /* NEW: This padding will push the combined text+video block down from the navbar. */
+    /* NEW: This padding will create space at the bottom of the content wrapper, pushing the down arrow away. */
+}
+
+/* Override default template styles for tm-hero-text-container */
+.tm-hero-text-container {
+    width: auto; /* Override template's 100% width */
+    height: auto; /* Override template's 100% height */
+    display: block; /* Override template's flex properties */
+    flex-flow: initial; /* Reset if template had flex-flow */
+    justify-content: initial; /* Reset if template had justify-content */
+    margin-bottom: 40px; /* Space between text and video. Adjust if needed. */
+    margin-top: 130px; /* Force override any negative margin from template */
+
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+
+}
+
+
+@media (max-width: 768px) {
+  .tm-hero-text-container {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
+  .tm-intro-next {
+    bottom: 20px;
+  }
+}
+
+
+/* Ensure tm-hero-text-container-inner (if it exists) is reset */
+.tm-hero-text-container-inner {
+    margin-top: 0 !important; /* Crucial: Remove the template's -90px margin-top */
+}
+
+.tm-hero-title,
+.tm-hero-subtitle {
+    color: #FAD643;
+    text-shadow: 2px 2px 2px #333;
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.5),   /* Inner glow, more opaque */
+        0 0 15px rgba(255, 215, 0, 0.3),  /* Mid-level glow, softer */
+        0 0 20px rgba(255, 215, 0, 0.1);  /* Outer glow, very subtle */
+    font-weight: 700;
+}
+
+.tm-hero-title {
+    font-size: 3.5rem;
+}
+
+.tm-section-title, 
+.tm-text-primary {
+    color: #FAD643;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), /* A slight blur */
+                 0 0 15px rgba(0,0,0,0.8), /* Another, slightly larger blur */
+                 0 0 20px rgba(255, 215, 0, 0.4);  /* Outer glow, very subtle */
+    font-weight: 600;
+
+}
+
+
+.tm-intro-next {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* Adjust the positioning of the down arrow link */
+.tm-next.tm-intro-next {
+    position: absolute; /* Keep this as absolute to position it at the bottom */
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: #B8860B
+    /* OVERRIDE: Remove any problematic margin-top from .tm-down-arrow-link */
+    margin-top: 0 !important; /* Crucial override if template had it */
+    margin-bottom: 0 !important; /* Crucial override if template had it */
+}
+
+/* Ensure tm-down-arrow-link is reset if it had problematic properties */
+.tm-down-arrow-link {
+    margin-top: 0 !important; /* Force override 18% margin-top from template */
+    margin-bottom: 0 !important; /* Force override 18% margin-top from template */
+}
+
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .tm-hero-content-wrapper {
+        padding-top: 60px; /* Adjust padding-top for mobile */
+    }
+    .video-center-container {
+        width: 90%;
+        max-width: none;
+        /* margin-top: 20px; */ /* Consider if you need a margin here on mobile */
+    }
+    .tm-hero-title {
+        font-size: 2.5rem;
+    }
+    .tm-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .tm-next.tm-intro-next {
+        bottom: 15px;
+    }
+}
+
+/* vídeo seção hero */
+.tm-hero-video-container {
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    z-index: 10;
+    position: relative;
+    /* Remove any 'box-shadow' properties if they exist here */
+    box-shadow: none !important; /* Force no box-shadow if inherited or previously set */
+}
+
+/* Style the video player for responsiveness and centering */
+.tm-hero-video-player {
+    max-width: 500px; /* Set a maximum width for the video (e.g., 800px, adjust as needed) */
+    width: 100%; /* Make it fill its container up to max-width */
+    height: 100%; /* Maintain aspect ratio */
+    display: block; /* Ensures it behaves like a block element for margin auto */
+    margin: 0 auto; /* This will center the video if it's smaller than its flex container */
+    border-radius: 8px; /* Optional: adds slightly rounded corners */
+    object-fit: cover;
+    object-position: center center;
+    background: transparent; /* Ensure no background color if not desired */
+    /* Remove any 'box-shadow' properties if they exist here too */
+    box-shadow: none !important; /* Force no box-shadow */
+}
+
+
+/* Style for individual video control buttons */
+.tm-video-control-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to true center of the button */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it round */
+    width: 60px; /* Size of the button */
+    height: 60px; /* Size of the button */
+    font-size: 2rem; /* Size of the Font Awesome icon */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11; /* Ensure it's above the video and other elements in the container */
+
+    opacity: 0; /* Start invisible */
+    pointer-events: none; /* Prevent clicks when invisible */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tm-video-control-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly larger on hover */
+}
+
+.tm-hero-video-container:hover .tm-video-control-button {
+    opacity: 1; /* Become visible */
+    pointer-events: auto; /* Allow clicks */
+}
+
+
+/* --- Impact Video Section --- */
+
+#impact-video {
+    /* Set a height for the section to contain the video and background */
+    min-height: 700px; /* Adjust as needed, ensure it's taller than your video */
+    display: flex; /* Make it a flex container to center its content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    overflow: hidden; /* Hide any overflowing background image */
+    background-position: center;
+    background: linear-gradient(to bottom,#070708,#020201); /* Starts very dark, transitions to your current dark blue */
+}
+
+/* Background Image Styling */
+.tm-impact-background-image {
+    position: absolute; /* Position it relative to #impact-video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place it behind the video player (video is z-index 10) */
+
+    /* --- Key properties for your request --- */
+    /*background-image: url('../img/cosmic-hand.png'); /* **Replace with your image path** */
+    background-repeat: no-repeat; /* **Crucial: Prevents the image from repeating** */
+    background-position: bottom left; /* **Positions the image at the bottom-left corner** */
+    background-size: 30%; /* **Default, but explicit to avoid 'cover' behavior** */
+    /* If you want the image to scale down but not cover the whole section, you could use 'contain' */
+    /* background-size: contain; */
+
+    /* Optional: If you want to darken the image */
+    filter: brightness(0.7); /* Adjust value to darken */
+}
+/* Video Container & Player Styling */
+.tm-video-container {
+    position: relative; /* Essential for z-index and centering */
+    z-index: 10; /* Place video player above the background image */
+    width: 80%; /* Adjust video container width for 'theater' size */
+    max-width: 900px; /* Maximum width for larger screens */
+    padding-bottom: 38%; /* This creates an aspect ratio (9:16 aspect ratio: width / (16/9) * 100%) */
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Semi-transparent background for video player area */
+    border-radius: 8px; /* Optional: Rounded corners for the video player */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Optional: Subtle shadow */
+    object-fit: cover; /* Ensures video covers the entire player area */
+    object-position: center; 
+    background-position: center;
+}
+
+.tm-impact-video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Mute Toggle Button --- */
+.tm-mute-toggle {
+    position: absolute;
+    bottom: 30px; /* Adjust distance from bottom */
+    right: 30px;  /* Adjust distance from right */
+    z-index: 15; /* Ensure it's above the video */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* White icon color */
+    border: none;
+    border-radius: 50%; /* Make it round */
+    width: 60px; /* Size of the button */
+    height: 60px; /* Size of the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2em; /* Icon size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tm-mute-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Optional: Hide the button if you want it to appear only on hover over the video container */
+.tm-video-container:not(:hover) .tm-mute-toggle {
+    opacity: 0;
+    pointer-events: none; /* Make it unclickable when hidden */
+}
+.tm-video-container:hover .tm-mute-toggle {
+    opacity: 1;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 767.98px) {
+    #impact-video {
+        min-height: 450px; /* Smaller height for mobile */
+    }
+    .tm-video-container {
+        width: 95%; /* Wider on smaller screens */
+        padding-bottom: 56.25%; /* Closer to 16:9 aspect ratio for mobile */
+    }
+}
+
+
+
+/* estilo das setas na hero page */
+.tm-down-arrow-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; /* Adjust if needed */
+    height: 100px; /* Adjust if needed */
+    margin: 18% auto 0; /* Center the entire link horizontally while keeping top margin */
+    position: relative;
+    /* Optional: Add a subtle border or box-shadow to the link container itself if you want a visual boundary */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    /* border-radius: 50%; */
+    margin-bottom: 0 !important;
+
+}
+
+
+/* Base styles for both arrows */
+.tm-down-arrow-one,
+.tm-down-arrow-two {
+    color: #E0E0E0; /* Smoothly gray color - you can experiment with #CCC, #BFBFBF */
+    font-size: 2em; /* Keep font size, adjust if icons look different */
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Ensure opacity transitions too */
+    cursor: pointer;
+}
+
+/* Initial position of the two arrows (more apart) */
+.tm-down-arrow-one {
+    transform: translateY(-10px); /* Move first arrow further up (e.g., -10px, -12px) */
+}
+
+.tm-down-arrow-two {
+    transform: translateY(10px); /* Move second arrow further down (e.g., 10px, 12px) */
+}
+
+/* Animation on hover (they come closer) */
+.tm-down-arrow-link:hover .tm-down-arrow-one {
+    transform: translateY(0); /* Move first arrow to center */
+}
+
+.tm-down-arrow-link:hover .tm-down-arrow-two {
+    transform: translateY(0); /* Move second arrow to center */
+}
+
+/* Optional: Subtle fade/brightness change on hover */
+.tm-down-arrow-link:hover .tm-down-arrow-one,
+.tm-down-arrow-link:hover .tm-down-arrow-two {
+    opacity: 1; /* Ensure full opacity on hover */
+    /* filter: brightness(1.2); /* Make them slightly brighter on hover */
+}
+
+
+/* In your main-css.css or tooplate-infinite-loop.css */
+#whatwedo {
+   
+    background-image: url(../img/breaking-chains-01.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: fill;
+
+    /* #101820 is a very deep, almost black-blue.
+       #1a2d42 is your existing dark blue. */
+
+}
+
+#whatwedo .row.tm-content-box.mt-1 { /* More specific selector to target the second row */
+    margin-top: 0 !important; /* Remove any margin-top */
+    padding-top: 0 !important; /* Remove any padding-top */
+    margin-bottom: 0 !important;
+}
+
+/* Custom styling for the main image in What We Do section */
+.tm-whatwedo-main-img {
+    max-width: 100%; /* Ensures it fits within its column */
+    height: auto;    /* Maintains aspect ratio */
+    /* Optional: Set a max-height if your image is very tall and you want to constrain it */
+    max-height: 500px; /* Adjust this value if needed for visual balance */
+    object-fit: contain; /* Ensures the whole image is visible within the bounds */
+
+    /* Remove previous margin-left/right/display rules as Bootstrap flex utilities handle centering */
+}
+
+/* Optional: Adjust column padding if columns feel too far apart */
+@media (min-width: 768px) {
+    .tm-content-box .col-md-6 {
+        padding-left: 30px; /* Increase padding on the left of the right column */
+        padding-right: 30px; /* Increase padding on the right of the left column */
+    }
+}
+
+.service-image {
+    max-height: 440px; /* Adjust this value as needed (e.g., 280px, 320px, 400px) */
+    width: auto;       /* Ensures the aspect ratio is maintained */
+    display: block;    /* Helps remove any small whitespace below the image */
+    margin: 0 auto;    /* Centers the image horizontally within its column */
+    filter: grayscale(10%);
+    background-color: transparent;
+}
+
+/* You might want to consider responsive adjustments for smaller screens */
+@media (max-width: 767.98px) { /* For small devices (e.g., mobile) */
+    .service-image {
+        max-height: 350px; /* Adjust for smaller screens */
+        width: auto;
+    }
+}
+
+
+
+.testimonials-carousel {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.testimonial-item {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+/* New CSS for testimonial photos */
+.testimonial-item .testimonial-photo {
+    width: 100px; /* Set a fixed width for the photo */
+    height: 100px; /* Set a fixed height to ensure it's a perfect circle */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 25px; /* Space between the photo and the quote */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+    display: block; /* Ensures margins work correctly for centering */
+    border: 3px solid #B8860B; /* Optional: A thin dark gold border around the photo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: subtle shadow */
+}
+
+.testimonial-item blockquote {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #888;
+    margin-bottom: 15px;
+    border-left: 5px solid #B8860B;
+    padding-left: 15px;
+    line-height: 1.5;
+    justify-content: center;
+}
+
+.testimonial-item p {
+    font-size: 0.95em;
+    color: #777;
+}
+
+/* Customizing Slick Arrows (Optional - if default doesn't fit your theme) */
+.slick-prev,
+.slick-next {
+    font-size: 0; /* Hide default text */
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 10;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'Font Awesome 5 Free'; /* Assuming you use Font Awesome */
+    font-weight: 900; /* For solid icons */
+    font-size: 30px;
+    line-height: 1;
+    color: #B8860B; /* Dark gold color for arrows */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:before {
+    content: '\f053'; /* Font Awesome left arrow icon */
+}
+
+.slick-next:before {
+    content: '\f054'; /* Font Awesome right arrow icon */
+}
+
+.slick-prev {
+    left: -40px; /* Position left arrow */
+}
+
+.slick-next {
+    right: -40px; /* Position right arrow */
+}
+
+
+/* trajectory in numbers */
+
+
+.tm-stats-row {
+    margin-top: 30px; /* Space between title and numbers */
+}
+
+.tm-stat-icon {
+    font-size: 2.5em; /* Adjust size as needed */
+    color: #013220; /* Your brand gold for icons */
+    display: block; /* Ensures it takes its own line for margin-bottom */
+    text-shadow: 0 0 8px rgba(0,0,0,0.5); /* Subtle shadow for depth */
+}
+
+.tm-stat-item {
+    padding: 20px; /* Internal padding for each stat box */
+    margin-bottom: 20px; /* Space between rows on smaller screens */
+}
+
+.tm-stat-item:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    background-color: rgba(0, 0, 0, 0.1); /* Darker on hover */
+}
+
+.tm-stat-value {
+    font-size: 3.5em; /* Large, impactful numbers */
+    font-weight: 700;
+    margin-bottom: 5px; /* Space between number and label */
+    line-height: 1.2; /* Adjust line height for big numbers */
+    color: #013220;
+}
+
+.tm-stat-label {
+    font-size: 1.1em; /* Readable label size */
+    font-weight: 500;
+    text-transform: uppercase; /* Optional: Make labels uppercase */
+    letter-spacing: 1px;
+    color: #013220;
+}
+
+.tm-text-success{
+    color: #013220;
+    text-shadow:
+        0 0 8px rgba(0, 0, 0, 0.4),   /* Inner glow, more opaque */
+        0 0 15px rgba(0, 0, 0, 0.25),  /* Mid-level glow, softer */
+        0 0 20px rgba(0, 0, 0, 0.1); /* Another, slightly larger blur */
+    font-weight: 550;
+}
+
+/* Partners Logo Marquee Section */
+
+#partners-logos {
+    margin-top: 0;
+    padding-bottom: 100px; /* Adjust as needed for spacing below the marquee */
+    background-color: #f8f8f8; /* A very light background to contrast with dark theme elsewhere, or keep it dark */
+    /* If you want a darker background for this section, adjust this */
+}
+
+.logo-marquee-container {
+    width: 100%;
+    overflow: hidden; /* Hides the parts of the logos outside the container */
+    white-space: nowrap; /* Ensures all logos stay on one line */
+    padding: 30px 0; /* Vertical padding inside the container */
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Optional subtle inner shadow */
+}
+
+.logo-marquee-content {
+    display: inline-block; /* Allows content to flow horizontally without wrapping */
+    animation: marquee-scroll 30s linear infinite; /* Adjust '60s' for speed */
+    /* Add animation-play-state: paused to the container on hover */
+}
+
+.logo-marquee-container:hover .logo-marquee-content {
+    animation-play-state: paused; /* Pause animation on hover */
+}
+
+.logo-marquee-content img {
+    height: 90px; /* Set a consistent height for your logos */
+    width: auto;
+    margin: 0 40px; /* Space between logos */
+    vertical-align: middle; /* Align logos nicely */
+    filter: grayscale(100%); /* GitHub-style: make them grayscale */
+    opacity: 0.7; /* Slight transparency for a softer look */
+    transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Optional: Make logos colorful on hover */
+.logo-marquee-content img:hover {
+    filter: grayscale(0%); /* Full color on hover */
+    opacity: 1; /* Fully opaque on hover */
+}
+
+
+/*  work and services */
+.tm-section-desc {
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+
+/* Keyframes for the scrolling animation */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    100% {
+        transform: translateX(-50%); /* Scroll to the left by 50% of the content width */
+                                     /* This value needs to be half the total width of the *duplicated* content */
+    }
+}
+
+/* Adjustments for responsiveness if needed */
+@media (max-width: 768px) {
+    .logo-marquee-content img {
+        height: 40px; /* Smaller logos on mobile */
+        margin: 0 20px;
+    }
+    .logo-marquee-content {
+        animation-duration: 40s; /* Faster scroll on smaller screens */
+    }
+}
+
+
+/* Gallery elements */
+
+.tm-gallery-container {
+  padding-top: 20px;
+  padding-bottom: 120px;
+}
+
+.tm-gallery-item {
+  margin: 0 15px;
+  border-radius: 8px;
+}
+
+.slick-dots {
+  bottom: -65px;
+}
+
+.slick-dots li {
+  margin: 0 13px;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before,
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #3ba0dd;
+}
+
+.slick-dots li button:before {
+  font-size: 18px;
+}
+
+/* Hover Effect */
+/* Common style */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.grid figure h2 span {
+  font-weight: 600;
+}
+
+.grid figure h2,
+.grid figure p {
+  margin: 0;
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/*---------------*/
+/***** Honey *****/
+/*---------------*/
+
+figure.effect-honey {
+  background: #4a3753;
+  max-width: 300px;
+  margin-left: 50px;
+}
+
+figure.effect-honey img {
+  opacity: 1;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+figure.effect-honey:hover img {
+  opacity: 0.4;
+}
+
+figure.effect-honey figcaption::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: #38C;
+  content: "";
+  -webkit-transform: translate3d(0, 10px, 0);
+  transform: translate3d(0, 10px, 0);
+}
+
+figure.effect-honey h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1em 1.5em;
+  width: 100%;
+  text-align: left;
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
+}
+
+figure.effect-honey h2 i {
+  font-style: normal;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
+}
+
+figure.effect-honey figcaption::before,
+figure.effect-honey h2 {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+}
+
+figure.effect-honey:hover figcaption::before,
+figure.effect-honey:hover h2,
+figure.effect-honey:hover h2 i {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.tm-container-gallery {
+    padding-top: 30px;
+  padding: 0 !important;
+    }
+
+/* Contact */
+
+
+
+
+
+/* Instagram Floating Button Styles */
+
+.instagram-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 120px; /* Positioned 60px (WPP height) + 20px (gap) + 40px (WPP bottom) = 120px from bottom */
+    right: 40px; /* Same right position as WhatsApp button */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); /* Instagram gradient */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: /* Initial subtle shadow for depth */
+        0px 2px 5px rgba(0, 0, 0, 0.3),
+        /* First glow layer (inner, subtle) */
+        0 0 5px rgba(225, 48, 108, 0.7), /* Using a common Instagram accent color for glow */
+        /* Second glow layer (brighter, wider) */
+        0 0 15px rgba(225, 48, 108, 0.7);
+    z-index: 999; /* Slightly lower z-index than WhatsApp if you want WhatsApp to overlay in edge cases */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.instagram-float:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: /* Enhanced glow on hover */
+        0px 2px 8px rgba(0, 0, 0, 0.4), /* Slightly stronger base shadow */
+        0 0 10px rgba(225, 48, 108, 0.8), /* Brighter inner glow */
+        0 0 30px rgba(225, 48, 108, 0.8), /* Much wider, more intense glow */
+        0 0 60px rgba(225, 48, 108, 0.8); /* Even wider, softer halo */
+}
+
+/* Optional: Adjust for smaller screens if needed */
+@media (max-width: 768px) {
+    .instagram-float {
+        width: 50px;
+        height: 50px;
+        bottom: 80px; /* 50px (WPP height) + 10px (gap) + 20px (WPP bottom) = 80px */
+        right: 20px;
+        font-size: 25px;
+    }
+    .instagram-float:hover {
+        /* Adjust hover glow for smaller screens if different intensity is desired */
+        box-shadow:
+            0px 2px 6px rgba(0, 0, 0, 0.3),
+            0 0 8px rgba(225, 48, 108, 0.7),
+            0 0 20px rgba(225, 48, 108, 0.7);
+    }
+}
+
+.instagram-float:focus,
+.instagram-float:active {
+    outline: none; /* Removes the default browser outline */
+    /* Ensure styles revert to the base state (or define a specific 'clicked' state) */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); /* Revert to base gradient */
+    box-shadow: /* Revert to base glow */
+        0px 2px 5px rgba(0, 0, 0, 0.3),
+        0 0 5px rgba(225, 48, 108, 0.7),
+        0 0 15px rgba(225, 48, 108, 0.7);
+    color: #FFF; /* Ensure icon color stays white */
+    transform: scale(1); /* Ensure it reverts from hover scale */
+}
+
+/* WhatsApp Floating Button Styles */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366; /* WhatsApp brand color */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: /* Initial subtle shadow for depth */
+        0px 2px 5px rgba(0, 0, 0, 0.3),
+        /* First glow layer (inner, subtle) */
+        0 0 5px #25D366,
+        /* Second glow layer (brighter, wider) */
+        0 0 15px #25D366; /* Using the same green for the glow */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow to transition */
+}
+
+.whatsapp-float:focus,
+.whatsapp-float:active {
+    outline: none; /* Removes the default browser outline */
+    /* Ensure styles revert to the base state (or define a specific 'clicked' state) */
+    background-color: #25D366; /* Revert to base WhatsApp green */
+    box-shadow: /* Revert to base glow */
+        0px 2px 5px rgba(0, 0, 0, 0.3),
+        0 0 5px #25D366,
+        0 0 15px #25D366;
+    color: #FFF; /* Ensure icon color stays white */
+}
+
+.whatsapp-float:hover {
+    background-color: #1DA851; /* Slightly darker green on hover */
+    box-shadow: /* Enhanced glow on hover */
+        0px 2px 8px rgba(0, 0, 0, 0.4), /* Slightly stronger base shadow */
+        0 0 10px #25D366, /* Brighter inner glow */
+        0 0 30px #25D366, /* Much wider, more intense glow */
+        0 0 60px #25D366; /* Even wider, softer halo */
+}
+
+/* Optional: Adjust for smaller screens if needed */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+    .whatsapp-float:hover {
+        /* Adjust hover glow for smaller screens if different intensity is desired */
+        box-shadow: /* Enhanced glow on hover for smaller screens */
+            0px 2px 6px rgba(0, 0, 0, 0.3),
+            0 0 8px #25D366,
+            0 0 20px #25D366;
+    }
+}
+
+/* Página de contato */
+
+#contact {
+  color: white;
+  background-color: #001828;
+  background-image: url(../img/horizon-03.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 980px;
+  position: relative;
+  background-attachment: fixed;
+  /*padding-top: 100px;*/
+}
+
+.contact-item {
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.item-link {
+  display: flex;
+  align-items: center;
+}
+
+.item-link i,
+.item-link span {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.item-link:hover i,
+.item-link:hover span {
+  color: #3496d8;
+}
+
+.tm-input {
+    margin: 0 0 20px 0;
+    width: 90%;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+.tm-btn-submit {
+    font-size: 0.9em;
+    color: #fff;
+    background-color: #369;
+    width: 50%;
+    margin-bottom: 60px;
+}
+
+.tm-btn-submit:hover {
+    color: #fff;
+    background-color: #38B;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.tm-footer {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+}
+
+.tm-footer a {
+    color: #fff;
+}
+
+.tm-footer a:hover {
+    color: #9CF;
+}
+
+.tm-footer-link {
+  color: white;
+}
+
+.tm-footer-link:hover,
+.tm-footer-link:focus {
+  color: #38B;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.9;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1275px;
+  }
+
+  .tm-container-gallery {
+    max-width: 1290px;
+  }
+
+  .tm-container-contact {
+    max-width: 1063px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tm-intro-text-container {
+    padding-left: 15px;
+    padding-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tm-intro-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tm-btn-submit {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .tm-gallery-container {
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tm-gallery-container-2 {
+    max-width: 350px;
+  }
+
+  .slick-dots li {
+    margin: 0 8px;
+  }
+
+  .tm-gallery-item {
+    margin: 0;
+  }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures html and body are also 100% height for vh to work correctly */
+}
+
+/* Basic Modal Styles */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%; /* Responsive width */
+    max-width: 450px; /* Max width for larger screens */
+    position: relative;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+.modal-content p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute; /* Position relative to modal-content */
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}

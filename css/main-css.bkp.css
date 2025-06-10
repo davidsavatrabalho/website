@@ -377,31 +377,41 @@ blockquote {
 }
 
 /* vídeo seção hero */
-
+/* Base styles for .tm-hero-video-container (default for PC, overridden by smaller breakpoints) */
 .tm-hero-video-container {
-    height: auto;
+    padding-bottom: 56.25%; /* Aspect Ratio 16:9. ADJUST THIS if your video has a different aspect ratio. */
+    height: auto; /* Collapses height, padding-bottom defines vertical space */
+    position: relative; /* Essential for absolute positioning of video and button */
+    overflow: hidden; /* Hides content outside the defined aspect ratio box */
+
+    /* Margins, Z-index, Visuals (ensure these are consistent with your design) */
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 100px; /* Default margin for PC/larger screens */
     z-index: 10;
-    position: relative;
-    /* Remove any 'box-shadow' properties if they exist here */
-    box-shadow: none !important; /* Force no box-shadow if inherited or previously set */
+    border-radius: 8px; /* Rounded corners for the video frame */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    background-color: rgba(0, 0, 0, 0.7); /* Background for the frame */
 }
 
-/* Style the video player for responsiveness and centering */
+/* Styles for .tm-hero-video-player (the <video> element itself) */
 .tm-hero-video-player {
-    max-width: 550px; /* Set a maximum width for the video (e.g., 800px, adjust as needed) */
-    width: 100%; /* Make it fill its container up to max-width */
-    height: 100%; /* Maintain aspect ratio */
-    display: block; /* Ensures it behaves like a block element for margin auto */
-    margin: 0 auto; /* This will center the video if it's smaller than its flex container */
-    border-radius: 8px; /* Optional: adds slightly rounded corners */
-    object-fit: cover;
-    object-position: center center;
-    background: transparent; /* Ensure no background color if not desired */
-    /* Remove any 'box-shadow' properties if they exist here too */
-    box-shadow: none !important; /* Force no box-shadow */
+    position: absolute; /* Posicionado absolutamente para preencher o contêiner pai */
+    top: 0;
+    left: 0;
+    width: 100%; /* Preenche 100% da largura do contêiner pai */
+    height: 100%; /* Preenche 100% da altura do contêiner pai (definida pelo padding-bottom) */
+
+    margin: 0 auto;
+    display: block;
+    object-fit: cover; /* Garante que o vídeo cubra toda a área, cortando se as proporções não coincidirem */
+    object-position: center center; /* Centraliza o conteúdo do vídeo dentro do frame */
+
+    /* Propriedades adicionais para o vídeo */
+    background: transparent; /* Garante que o vídeo não tenha um fundo próprio opaco */
+    border-radius: 8px; /* Para que o vídeo tenha os mesmos cantos arredondados do contêiner */
+    box-shadow: none !important;
 }
+
 /* Styles for the video control button (play/pause) */
 .tm-video-control-button {
     position: absolute; /* Positioned relative to .tm-hero-video-container */
@@ -449,9 +459,6 @@ blockquote {
         max-width: none; /* Crucial: removes the max-width cap for mobile */
         margin-bottom: 270px; /* Your specific margin for mobile */
     }
-    .tm-hero-video-player {
-        max-width: none;
-    }
 }
 
 /* For Tablets (min-width: 768px and max-width: 1024.1px) */
@@ -460,8 +467,15 @@ blockquote {
         width: 100%; 
         margin-bottom: 270px; /* Your specific margin for tablets */
     }
-    .tm-hero-video-player {
-        max-width: none;
+}
+
+/* For PC Desktops (explicitly for widths greater than 1024.1px) */
+@media (min-width: 1024.11px) { /* Start from 1024.11px to ensure no overlap with tablet range */
+    .tm-hero-video-container {
+        max-width: 500px !important; /* Apply the 500px cap specifically for PC */
+        height: 20% !important;
+        width: 100% !important; /* Still fills 100% of the parent, but capped by max-width */
+        margin-bottom: 100px; /* Revert to default margin for PC if it was changed for smaller screens */
     }
 }
 

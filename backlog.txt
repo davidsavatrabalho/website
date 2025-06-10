@@ -100,8 +100,13 @@ ok.
 
 > Ajudando pessoas em casos Extremos! slogan
 
+ok.
 
 0x.06
+
+- Área Meu Serviço; logo; arrows galeria; logo-marque; 
+- responsividade em testimonials carousel;
+- responsividade do vídeo da hero;
 
 - integracao do website com o servico de dominio e hospedagem,
 - botão enviar email funcionando;
@@ -114,3 +119,4 @@ Não sou infinito, após fazer tudo que imaginaria fazer, haverão coisas que n�
 
 Mas a persistência faz vencer as resistências, a dureza que se é em andar sobre o lodo pesado, de deixar ir. Honestamente, de dentro pra fora.
 
+auto-Perceções: Vida >>>>> Videos // Mente >>>>>>> feed feed your MIND.

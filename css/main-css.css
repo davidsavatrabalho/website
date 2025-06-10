@@ -445,8 +445,7 @@ blockquote {
 /* For Mobile Devices (max-width: 767.98px) */
 @media (max-width: 767.98px) {
     .tm-hero-video-container {
-        width: 90%; /* Occupy 90% of screen width, leaving some padding */
-        max-width: none; /* Crucial: removes the max-width cap for mobile */
+        width: 100%; /* Occupy 90% of screen width, leaving some padding */
         margin-bottom: 270px; /* Your specific margin for mobile */
     }
     .tm-hero-video-player {

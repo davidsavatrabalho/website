@@ -243,6 +243,57 @@ $(document).ready(function() {
         }]
     });
 
+    const gallerySection = document.getElementById('gallery');
+    const whatsappPopup = document.getElementById('whatsappPopup');
+    const whatsappButton = document.querySelector('.whatsapp-float'); // Get the WhatsApp button
+
+    // Define a key for localStorage to prevent showing the popup multiple times
+    const popupShownKey = 'whatsappPopupShown';
+
+    // --- Intersection Observer to detect when #gallery is reached ---
+    if (gallerySection && whatsappPopup) {
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px', // No margin around the root
+            threshold: 0.2 // Trigger when 20% of the #gallery section is visible
+        };
+
+        const galleryObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Check if popup has already been shown in this session/visit
+                    if (localStorage.getItem(popupShownKey)) {
+                        // Popup will be shown after a small delay
+                        setTimeout(() => {
+                            whatsappPopup.classList.add('show-popup'); // Show the popup
+
+                            // Set a timeout to hide the popup automatically after X seconds
+                            setTimeout(() => {
+                                whatsappPopup.classList.remove('show-popup');
+                            }, 6000); // Popup stays for 6 seconds (adjust as needed)
+
+                            // Mark as shown in localStorage so it doesn't appear again (per browser)
+                            localStorage.setItem(popupShownKey, 'true');
+                        }, 500); // Delay before popup appears (0.5 seconds)
+                    }
+                    // Optional: If you only want it to appear once EVER (unless localStorage is cleared),
+                    // you can uncomment the line below to stop observing after it's shown.
+                    // observer.unobserve(gallerySection);
+                }
+            });
+        }, observerOptions);
+
+        galleryObserver.observe(gallerySection);
+    }
+
+    // --- Event listener to hide popup if WhatsApp button is clicked ---
+    if (whatsappButton && whatsappPopup) {
+        console.log("entrando wpp");
+        whatsappButton.addEventListener('click', () => {
+            whatsappPopup.classList.remove('show-popup'); // Immediately hide the popup
+        });
+    }
+
 });
 
 

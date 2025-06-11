@@ -1123,7 +1123,7 @@ figure.effect-honey:hover h2 i {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 120px; /* Positioned 60px (WPP height) + 20px (gap) + 40px (WPP bottom) = 120px from bottom */
+    bottom: 40px; /* Positioned 60px (WPP height) + 20px (gap) + 40px (WPP bottom) = 120px from bottom */
     right: 40px; /* Same right position as WhatsApp button */
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); /* Instagram gradient */
     color: #FFF;
@@ -1158,7 +1158,7 @@ figure.effect-honey:hover h2 i {
     .instagram-float {
         width: 50px;
         height: 50px;
-        bottom: 80px; /* 50px (WPP height) + 10px (gap) + 20px (WPP bottom) = 80px */
+        bottom: 20px; /* 50px (WPP height) + 10px (gap) + 20px (WPP bottom) = 80px */
         right: 20px;
         font-size: 25px;
     }
@@ -1189,7 +1189,7 @@ figure.effect-honey:hover h2 i {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 40px;
+    bottom: 120px;
     right: 40px;
     background-color: #25D366; /* WhatsApp brand color */
     color: #FFF;
@@ -1236,7 +1236,7 @@ figure.effect-honey:hover h2 i {
     .whatsapp-float {
         width: 50px;
         height: 50px;
-        bottom: 20px;
+        bottom: 80px;
         right: 20px;
         font-size: 25px;
     }
@@ -1246,6 +1246,68 @@ figure.effect-honey:hover h2 i {
             0px 2px 6px rgba(0, 0, 0, 0.3),
             0 0 8px #25D366,
             0 0 20px #25D366;
+    }
+}
+
+/* WhatsApp Popup Styles */
+.whatsapp-popup {
+    position: fixed;
+    /* Position slightly above and aligned with the right of the button */
+    bottom: 195px; /* Adjust this value: whatsapp-float height (60px) + desired spacing (~15px) + popup height (~40px) */
+    right: 45px; /* Aligns with the right of the button */
+
+    background-color: #fefefe; /* Soft white background */
+    color: #333; /* Dark gray text for good contrast */
+    padding: 12px 18px;
+    border-radius: 10px; /* Gentle rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    z-index: 999; /* Below the WhatsApp button (which is z-index 1000) */
+
+    font-family: 'Raleway', sans-serif; /* Keep consistent with your site's font */
+    font-size: 1.1em;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 200px; /* Limit width for a gentle, elegant appearance */
+
+    opacity: 0; /* Initially hidden */
+    transform: scale(0); /* Initially collapsed for animation */
+    transform-origin: bottom right; /* Makes it "grow" from the bottom-right corner */
+    transition: all 0.4s ease-out; /* Smooth animation for showing/hiding */
+    pointer-events: none; /* Allows clicks to pass through when hidden */
+}
+
+/* Class to trigger the animation and make it visible */
+.whatsapp-popup.show-popup {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto; /* Allows clicks when visible */
+}
+
+/* CSS for the small pointer (triangle) at the bottom-right of the popup */
+.whatsapp-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Positions it outside the box, pointing down */
+    right: 15px; /* Adjust to align with the WhatsApp button visually */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Creates the left side of the triangle */
+    border-right: 10px solid transparent; /* Creates the right side of the triangle */
+    border-top: 10px solid #fefefe; /* Creates the base of the triangle, matching popup background */
+    /* Add a subtle shadow to the pointer as well for depth */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); /* Using filter for shadow on border-triangle */
+}
+
+/* Adjust for smaller screens if needed (matching your whatsapp-float media query) */
+@media (max-width: 768px) {
+    .whatsapp-popup {
+        bottom: 145px; /* Adjust based on smaller button height (50px + spacing) */
+        right: 25px; /* Adjust to match smaller button's right position */
+        max-width: 180px;
+        font-size: 1em;
+    }
+    .whatsapp-popup::after {
+        right: 10px; /* Adjust pointer position for smaller button */
     }
 }
 

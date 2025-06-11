@@ -286,7 +286,9 @@ $(window).scroll(function(e) {
 
 // Close mobile menu after click 
 $('#tmNav a').on('click', function() {
-    $('.navbar-collapse').removeClass('show');
+    if ($('.navbar-collapse').hasClass('show')) {
+        $('.navbar-collapse').collapse('hide');
+    }
 })
 
 // Scroll to corresponding section with animation

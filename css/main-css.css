@@ -124,7 +124,7 @@ blockquote {
 }
 
 .tm-navbar.scroll .tm-nav-link {
-    color: white; /* Stays white when scrolled down, for contrast */
+    color: #CCCCCC; /* Stays white when scrolled down, for contrast */
 }
 
 .tm-navbar.scroll .tm-nav-link:hover,
@@ -151,6 +151,25 @@ blockquote {
 
 .tm-navbar.scroll .navbar-toggler-icon {
     color: rgba(255, 255, 255, 0.8); /* Muted white icon for scrolled state */
+}
+
+@media (max-width: 767px) {
+
+  .navbar-nav {
+    max-width: 200px;
+    text-align: right;
+  }
+
+  .navbar-collapse {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 3px;
+  }
+
+  .navbar-collapse .nav-link {
+    color: #707070 !important;
+    padding-right: 20px;
+  }
 }
 
 /* introduction elements */
@@ -235,26 +254,6 @@ blockquote {
   .navbar-expand-md .navbar-nav .nav-link {
     padding-right: 30px;
     padding-left: 30px;
-  }
-}
-
-
-@media (max-width: 767px) {
-
-  .navbar-nav {
-    max-width: 200px;
-    text-align: right;
-  }
-
-  .navbar-collapse {
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 3px;
-  }
-
-  .navbar-collapse .nav-link {
-    color: #707070;
-    padding-right: 20px;
   }
 }
 
@@ -768,11 +767,13 @@ blockquote {
     font-size: 0; /* Hide default text */
     line-height: 0;
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
+    top: 50%;
     display: block;
     width: 30px;
     height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 0;
     cursor: pointer;
     color: transparent;

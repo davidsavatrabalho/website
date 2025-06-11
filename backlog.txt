@@ -110,7 +110,9 @@ ok.
 - botão enviar email funcionando;
 
 - adição swiper logo-marque,
- 
+- descobrir erro github pages popup wpp,
+
+
 - responsividade em testimonials carousel;
 - responsividade do vídeo da hero;
 - arrows galeria;

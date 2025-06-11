@@ -243,15 +243,21 @@ $(document).ready(function() {
         }]
     });
 
+    $(document).ready(function() {
+    console.log("Document is ready. Starting popup script initialization.");
+
     const gallerySection = document.getElementById('gallery');
     const whatsappPopup = document.getElementById('whatsappPopup');
-    const whatsappButton = document.querySelector('.whatsapp-float'); // Get the WhatsApp button
+    const whatsappButton = document.querySelector('.whatsapp-float');
 
-    // Define a key for localStorage to prevent showing the popup multiple times
+    // Log if the necessary DOM elements are found
+    console.log("Elements check: gallerySection found:", !!gallerySection, "whatsappPopup found:", !!whatsappPopup, "whatsappButton found:", !!whatsappButton);
+
     const popupShownKey = 'whatsappPopupShown';
 
     // --- Intersection Observer to detect when #gallery is reached ---
     if (gallerySection && whatsappPopup) {
+        console.log("Required elements for Intersection Observer are present. Setting up observer.");
         const observerOptions = {
             root: null, // Use the viewport as the root
             rootMargin: '0px', // No margin around the root
@@ -259,40 +265,68 @@ $(document).ready(function() {
         };
 
         const galleryObserver = new IntersectionObserver((entries, observer) => {
+            console.log("Intersection Observer callback fired for gallerySection.");
             entries.forEach(entry => {
+                console.log("  Entry is intersecting:", entry.isIntersecting);
+
                 if (entry.isIntersecting) {
-                    // Check if popup has already been shown in this session/visit
-                    if (localStorage.getItem(popupShownKey)) {
-                        // Popup will be shown after a small delay
-                        setTimeout(() => {
-                            whatsappPopup.classList.add('show-popup'); // Show the popup
+                    const hasPopupShown = localStorage.getItem(popupShownKey);
+                    console.log("  localStorage 'whatsappPopupShown' value:", hasPopupShown);
 
-                            // Set a timeout to hide the popup automatically after X seconds
+                    // Your current working logic (shows every time after the key is initially set)
+                    // If you want it to show ONLY ONCE EVER (and not on subsequent visits),
+                    // you would revert to: if (!hasPopupShown) {
+                    if (hasPopupShown) { // This means: "if it HAS been shown before"
+                        console.log("  Condition 'hasPopupShown' met. Preparing to show popup.");
+
+                        // To ensure it doesn't try to show if it's already visible (e.g., rapid scrolling)
+                        if (!whatsappPopup.classList.contains('show-popup')) {
                             setTimeout(() => {
-                                whatsappPopup.classList.remove('show-popup');
-                            }, 6000); // Popup stays for 6 seconds (adjust as needed)
+                                whatsappPopup.classList.add('show-popup');
+                                console.log("  Popup 'show-popup' class added after delay.");
 
-                            // Mark as shown in localStorage so it doesn't appear again (per browser)
-                            localStorage.setItem(popupShownKey, 'true');
-                        }, 500); // Delay before popup appears (0.5 seconds)
+                                // Set a timeout to hide the popup automatically after X seconds
+                                setTimeout(() => {
+                                    whatsappPopup.classList.remove('show-popup');
+                                    console.log("  Popup 'show-popup' class removed (auto-hide after 6s).");
+                                }, 6000); // Popup stays for 6 seconds
+
+                                // This line ensures the key is always 'true' after interaction
+                                localStorage.setItem(popupShownKey, 'true');
+                                console.log("  localStorage 'whatsappPopupShown' set to 'true'.");
+                            }, 500); // Delay before popup appears (0.5 seconds)
+                        } else {
+                            console.log("  Popup already visible, skipping show logic.");
+                        }
+                    } else { // This means: "if it has NOT been shown before"
+                        // This block runs on the very first time the key is not in localStorage
+                        // Based on your current working logic (if (hasPopupShown)), the popup won't show on this first run.
+                        // It will only show on subsequent runs AFTER the key has been set.
+                        // If you want it to show the FIRST time AND subsequent times, the localStorage check
+                        // should be managed differently or removed.
+                        console.log("  Condition 'hasPopupShown' NOT met (localStorage key is null). Popup will NOT be shown.");
                     }
-                    // Optional: If you only want it to appear once EVER (unless localStorage is cleared),
-                    // you can uncomment the line below to stop observing after it's shown.
-                    // observer.unobserve(gallerySection);
                 }
             });
         }, observerOptions);
 
         galleryObserver.observe(gallerySection);
+        console.log("Intersection Observer is now observing #gallery.");
+    } else {
+        console.warn("Intersection Observer NOT initialized. Missing #gallery or #whatsappPopup in the DOM.");
     }
 
     // --- Event listener to hide popup if WhatsApp button is clicked ---
     if (whatsappButton && whatsappPopup) {
-        console.log("entrando wpp");
+        console.log("WhatsApp button and popup found. Adding click listener to button.");
         whatsappButton.addEventListener('click', () => {
-            whatsappPopup.classList.remove('show-popup'); // Immediately hide the popup
+            whatsappPopup.classList.remove('show-popup');
+            console.log("WhatsApp button clicked. Popup 'show-popup' class removed.");
         });
+    } else {
+        console.warn("WhatsApp button click listener NOT added. Missing .whatsapp-float or #whatsappPopup.");
     }
+});
 
 });
 

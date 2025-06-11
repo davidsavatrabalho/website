@@ -87,7 +87,7 @@ ok
 
 ok.
 
-04.06
+04.06>>06.06
 
 
 - adição conteúdo pessoal;
@@ -109,12 +109,17 @@ ok.
 - integracao do website com o servico de dominio e hospedagem,
 - botão enviar email funcionando;
 
+- adição swiper logo-marque,
+ 
 - responsividade em testimonials carousel;
 - responsividade do vídeo da hero;
 - arrows galeria;
 - Área Meu Serviço;  
-
+- correção carousel-testimonials;
+- adição popup whatsapp;
+- correção nav-bar; 
 ok.
+
 
 
 /**/

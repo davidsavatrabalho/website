@@ -166,7 +166,7 @@ $(document).ready(function() {
         arrows: true, // Enable arrows!
         dots: true, // Enable pagination dots
         pauseOnHover: true, // Pause autoplay on hover
-        adaptiveHeight: true, // Adjust height based on current slide's content
+        //adaptiveHeight: true, // Adjust height based on current slide's content
         responsive: [{
             breakpoint: 768,
             settings: {
@@ -187,7 +187,7 @@ $(document).ready(function() {
     });
 
     // Get a reference to your carousel element
-    var $testimonialsCarousel = $('.testimonials-carousel');
+   /* var $testimonialsCarousel = $('.testimonials-carousel');
 
     // Add event listeners for mouseenter (hover in) and mouseleave (hover out)
     $testimonialsCarousel.on('mouseenter', function() {
@@ -196,7 +196,7 @@ $(document).ready(function() {
 
     $testimonialsCarousel.on('mouseleave', function() {
         $testimonialsCarousel.slick('slickPause'); // Pause automatic sliding
-    });
+    }); tava removendo funcionamentos embutidos do slick*/
 
 
     // Gallery

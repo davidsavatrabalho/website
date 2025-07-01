@@ -128,7 +128,9 @@ ok.
 
 - galeria, colocar opção de vídeos;
 - remover marcas d'água do vídeo de impacto;
-- 
+- categorias em cada janela na galeria de serviços
+
+
 
 
 

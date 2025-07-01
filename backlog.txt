@@ -110,9 +110,10 @@ ok.
 - botão enviar email funcionando;
 
 - adição swiper logo-marque,
+
+
+
 - descobrir erro github pages popup wpp,
-
-
 - responsividade em testimonials carousel;
 - responsividade do vídeo da hero;
 - arrows galeria;
@@ -123,6 +124,13 @@ ok.
 ok.
 
 
+01.07
+
+- galeria, colocar opção de vídeos;
+- remover marcas d'água do vídeo de impacto;
+- 
+
+
 
 /**/
 Sonho que se sonha só é só um sonho que se sonha só, reflexão; mas sonho que se sonha junto é realidade.
@@ -131,3 +139,5 @@ Não sou infinito, após fazer tudo que imaginaria fazer, haverão coisas que n�
 Mas a persistência faz vencer as resistências, a dureza que se é em andar sobre o lodo pesado, de deixar ir. Honestamente, de dentro pra fora.
 
 auto-Perceções: Vida >>>>> Videos // Mente >>>>>>> feed feed your MIND.
+
+independente do jogo, o meta-game, mind, é o mesmo: ações, causas, condições, motivações, consequências, desenvolvimentos, tramas, eventualizações...

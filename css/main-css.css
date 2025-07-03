@@ -666,7 +666,8 @@ blockquote {
 /* In your main-css.css or tooplate-infinite-loop.css */
 #whatwedo {
    
-    background-image: url(../img/breaking-chains-01.png); 
+    /*background-image: url(../img/breaking-chains-01.png); */
+    background: linear-gradient(to bottom, #FFFFFF, #020102);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -862,48 +863,81 @@ blockquote {
 
 /* Partners Logo Marquee Section */
 
+.partners-slider img {
+    height: 90px; /* Set a consistent height for your logos */
+    width: auto;
+    max-width: 100%; /* IMPORTANT: Ensures image doesn't exceed the width of its Swiper slide */
+    display: block; /* Ensures margin: auto works and helps with alignment */
+    margin: 0 auto; /* Center the image horizontally within its slide */
+    /* REMOVE THIS LINE: margin: 0 80px; */ /* <-- THIS IS THE CULPRIT FOR OVERLAPPING */
+
+    vertical-align: middle;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+    /* Optional: If logos still look distorted, consider object-fit: contain; */
+}
+
+/* Optional: Make logos colorful on hover (keep this as is, just adjust selector if needed) */
+.partners-slider img:hover { /* OR .swiper-slide img:hover */
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Optional: Adjust Swiper's default arrow/pagination styling */
+.swiper-button-next,
+.swiper-button-prev {
+    background-image: none !important; /* Remove Swiper's default SVG backgrounds */
+    width: 30px; /* Match Slick's desired width */
+    height: 30px; /* Match Slick's desired height */
+    /* Swiper usually handles top: 50% and transform: translateY(-50%) correctly by default */
+    z-index: 10; /* Ensure they are above content */
+    margin-top: 0; /* Clear any default top margin */
+    /* You might need to adjust left/right positioning here based on your layout if default isn't enough */
+    /* For example: */
+    /* left: 10px; */
+    /* right: 10px; */
+}
+
+/* 2. Apply Font Awesome styling to the pseudo-elements that hold the icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    /* IMPORTANT: Clear Swiper's default arrow character */
+    content: '' !important;
+
+    /* Apply Font Awesome font and properties */
+    font-family: 'Font Awesome 5 Free' !important; /* Use Font Awesome 5 Free font */
+    font-weight: 900 !important; /* For solid icons, like fa-chevron-left/right */
+    font-size: 30px !important; /* Match the size you want */
+    line-height: 1 !important; /* Ensures vertical alignment */
+    color: #013220 !important; /* Your desired dark gold color */
+    -webkit-font-smoothing: antialiased; /* For smoother font rendering */
+    -moz-osx-font-smoothing: grayscale; /* For smoother font rendering */
+}
+
+/* 3. Specify the exact Font Awesome icon for each arrow */
+.swiper-button-prev::after {
+    content: '\f053' !important; /* Unicode for Font Awesome's "chevron-left" icon */
+}
+
+.swiper-button-next::after {
+    content: '\f054' !important; /* Unicode for Font Awesome's "chevron-right" icon */
+}
+
+.swiper-pagination-bullet {
+    background: #bbb; /* Adjust dot color */
+}
+
+.swiper-pagination-bullet-active {
+    background: #333; /* Adjust active dot color */
+}
+
 #partners-logos {
     margin-top: 0;
     padding-bottom: 100px; /* Adjust as needed for spacing below the marquee */
     background-color: #f8f8f8; /* A very light background to contrast with dark theme elsewhere, or keep it dark */
     /* If you want a darker background for this section, adjust this */
 }
-
-.logo-marquee-container {
-    width: 100%;
-    overflow: hidden; /* Hides the parts of the logos outside the container */
-    white-space: nowrap; /* Ensures all logos stay on one line */
-    padding: 30px 0; /* Vertical padding inside the container */
-    position: relative;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Optional subtle inner shadow */
-}
-
-.logo-marquee-content {
-    display: inline-block; /* Allows content to flow horizontally without wrapping */
-    animation: marquee-scroll 30s linear infinite; /* Adjust '60s' for speed */
-    /* Add animation-play-state: paused to the container on hover */
-}
-
-.logo-marquee-container:hover .logo-marquee-content {
-    animation-play-state: paused; /* Pause animation on hover */
-}
-
-.logo-marquee-content img {
-    height: 90px; /* Set a consistent height for your logos */
-    width: auto;
-    margin: 0 40px; /* Space between logos */
-    vertical-align: middle; /* Align logos nicely */
-    filter: grayscale(100%); /* GitHub-style: make them grayscale */
-    opacity: 0.7; /* Slight transparency for a softer look */
-    transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover */
-}
-
-/* Optional: Make logos colorful on hover */
-.logo-marquee-content img:hover {
-    filter: grayscale(0%); /* Full color on hover */
-    opacity: 1; /* Fully opaque on hover */
-}
-
 
 /*  work and services */
 .tm-section-desc {
@@ -937,8 +971,126 @@ blockquote {
 }
 
 
+/* News Section Styles */
+#news-section {
+    padding-top: 80px; /* Adjust top spacing for the section */
+    padding-bottom: 80px; /* Adjust bottom spacing for the section */
+    /* No specific background-color here, as we want the page's underlying background to show */
+}
+
+/* Flexbox container for the news columns to ensure equal height */
+.tm-news-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap to the next line on smaller screens */
+    align-items: stretch; /* Makes all direct children (columns) stretch to the same height */
+    margin-top: 0px; /* Space below the section title/description */
+}
+
+/* Styling for each individual column container */
+.tm-news-col {
+    display: flex; /* Make the column itself a flex container */
+    padding: 15px; /* Add internal padding for spacing between cards */
+    /* This padding will create the "gap" between columns */
+}
+
+/* Styling for the news item card within each column */
+.tm-news-item {
+    flex-grow: 1; /* Allows the item to grow and fill the available height in its column */
+    padding: 4px; /* Padding inside the card */
+    border-radius: 10px; /* Rounded corners for the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    text-align: center; /* Center content within the card */
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly transparent white background (40% opaque) */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    display: flex; /* Use flexbox for internal content alignment (image, title, text) */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top within the card */
+}
+
+/* Hover effect: make the background less transparent and shadow more prominent */
+.tm-news-item:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Less transparent white on hover (80% opaque) */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+/* Styling for the images within the news items */
+.tm-news-img {
+    width: 365px; /* Ensures image doesn't overflow its container */
+    height: 247px; /* Fixed height for images to standardize appearance across items */
+    object-fit: cover; /* Scales the image to fit its container without cropping, maintaining aspect ratio */
+    border-radius: 8px; /* Slightly rounded corners for images */
+    margin-bottom: 20px; /* Space below the image */
+    display: block; /* Essential for `margin: auto` to work */
+    margin-left: auto; /* Center image horizontally */
+    margin-right: auto; /* Center image horizontally */
+}
+
+/* Styling for the titles */
+.tm-news-title {
+    font-size: 1.5em;
+    color: #000; /* Darker color for titles */
+    margin-bottom: 15px;
+    font-weight: 700; /* Bold title */
+    text-shadow:
+        0 0 8px rgba(0, 0, 0, 0.4),   /* Inner glow, more opaque */
+        0 0 15px rgba(0, 0, 0, 0.25),  /* Mid-level glow, softer */
+        0 0 20px rgba(0, 0, 0, 0.1); 
+}
+
+/* Styling for the body text */
+.tm-news-text {
+    font-size: 0.9em;
+    color: #000;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5), /* A slight blur */
+                 0 0 15px rgba(0,0,0,0.3), /* Another, slightly larger blur */
+                 0 0 20px rgba(255, 255, 0, 0.1);
+    line-height: 1.6;
+    flex-grow: 1; /* Allows text to take up remaining space, pushing content down if needed for equal height */
+    margin-bottom: 0; /* Remove default paragraph bottom margin if it's the last element */
+}
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 991px) { /* Targets screens smaller than large desktops */
+    .tm-news-item {
+        padding: 25px; /* Slightly less padding on smaller screens */
+    }
+    .tm-news-img {
+        height: 100px; /* Slightly smaller images */
+        margin-bottom: 15px;
+    }
+    .tm-news-title {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+    }
+    .tm-news-text {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 767px) { /* Targets screens smaller than medium desktops (e.g., tablets in portrait, phones) */
+    .tm-news-col {
+        /* When columns stack (col-sm-12), the side padding needs to be consistent */
+        padding: 10px 15px; /* Adjust side padding as needed for single column */
+    }
+    .tm-news-item {
+        padding: 20px;
+    }
+}
+
 /* Gallery elements */
 
+#gallery {
+   
+    background-image: url(../img/breaking-chains-01.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: fill;
+
+    /* #101820 is a very deep, almost black-blue.
+       #1a2d42 is your existing dark blue. */
+
+}
 .tm-gallery-container {
   padding-top: 20px;
   padding-bottom: 120px;
@@ -947,6 +1099,14 @@ blockquote {
 .tm-gallery-item {
   margin: 0 15px;
   border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.4); /* Slightly transparent white background (40% opaque) */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: make the background less transparent and shadow more prominent */
+.tm-gallery-item:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Less transparent white on hover (80% opaque) */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
 }
 
 .slick-dots {
@@ -1045,19 +1205,23 @@ blockquote {
 /*---------------*/
 
 figure.effect-honey {
-  background: #4a3753;
+  background: rgba(74, 55, 83, 0.5) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Add a subtle initial shadow */
+  
+  /* NEW: Smooth transition for background and shadow on hover */
+  transition: background 0.35s ease, box-shadow 0.35s ease;
   max-width: 300px;
   margin-left: 50px;
 }
 
 figure.effect-honey img {
-  opacity: 1;
+  opacity: 0.4;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
 
 figure.effect-honey:hover img {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 figure.effect-honey figcaption::before {

@@ -187,18 +187,74 @@ $(document).ready(function() {
     });
 
     // Get a reference to your carousel element
-   /* var $testimonialsCarousel = $('.testimonials-carousel');
+    /* var $testimonialsCarousel = $('.testimonials-carousel');
 
-    // Add event listeners for mouseenter (hover in) and mouseleave (hover out)
-    $testimonialsCarousel.on('mouseenter', function() {
-        $testimonialsCarousel.slick('slickPlay'); // Start automatic sliding
+     // Add event listeners for mouseenter (hover in) and mouseleave (hover out)
+     $testimonialsCarousel.on('mouseenter', function() {
+         $testimonialsCarousel.slick('slickPlay'); // Start automatic sliding
+     });
+
+     $testimonialsCarousel.on('mouseleave', function() {
+         $testimonialsCarousel.slick('slickPause'); // Pause automatic sliding
+     }); tava removendo funcionamentos embutidos do slick*/
+
+    const partnersSwiper = new Swiper('.partners-slider', {
+        // Optional parameters
+        loop: true, // Enable continuous loop mode
+        slidesPerView: 2, // Default: show 1 slide per view
+        spaceBetween: 30, // Space between slides
+
+        autoplay: {
+            delay: 2500, // 3 seconds between slides
+            disableOnInteraction: false, // Continue autoplay after user interaction
+        },
+
+        // If you need responsive breakpoints (e.g., more logos on larger screens)
+        breakpoints: {
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 40
+            },
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 50
+            },
+            // when window width is >= 1024px
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 60
+            },
+            // when window width is >= 1200px
+            1200: {
+                slidesPerView: 5, // Show 5 logos on very large screens
+                spaceBetween: 70
+            }
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // Pagination dots
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
     });
 
-    $testimonialsCarousel.on('mouseleave', function() {
-        $testimonialsCarousel.slick('slickPause'); // Pause automatic sliding
-    }); tava removendo funcionamentos embutidos do slick*/
-
-
+    // Optional: Pause autoplay on hover for desktop (if autoplay is enabled)
+    $('.partners-slider').hover(
+        function() {
+            partnersSwiper.autoplay.stop();
+        },
+        function() {
+            partnersSwiper.autoplay.start();
+        }
+    );
     // Gallery
     // Gallery Initialization
     $('.tm-gallery').slick({
@@ -206,7 +262,7 @@ $(document).ready(function() {
         arrows: true,
         infinite: true,
         autoplay: true, // <-- CHANGE THIS TO TRUE
-        autoplaySpeed: 2500, // <-- Adjust speed if 2 seconds feels too fast for videos/text (e.g., 3000-5000ms)
+        autoplaySpeed: 3000, // <-- Adjust speed if 2 seconds feels too fast for videos/text (e.g., 3000-5000ms)
         pauseOnHover: true, // <-- This is the default, but explicitly stating it is clear
 
         slidesToShow: 3,
@@ -317,9 +373,6 @@ $(document).ready(function() {
         console.warn("WhatsApp button click listener NOT added. Missing .whatsapp-float or #whatsappPopup.");
     }
 
-});
-
-
 /* audio button on video player */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -386,4 +439,5 @@ $("a").on('click', function(event) {
     } // End if
 });
 
+});
 // coluna de testemunhos em serviços

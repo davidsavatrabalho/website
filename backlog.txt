@@ -127,12 +127,12 @@ ok.
 01.07
 
 - galeria, colocar opção de vídeos;
-- remover marcas d'água do vídeo de impacto;
 - categorias em cada janela na galeria de serviços
 
 02.07
 
 - adicionar seção Quem Sou Eu // O que eu Faço // Como posso te ajudar >> missão 
+ok.
 - otimizar textos na barra de navegação;
 - trocar cores background galeria serviços;
 - adicionar vídeos por categoria;

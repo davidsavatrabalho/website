@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/main-css.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
 </head>
 <body>
   <!-- Hero section -->
@@ -72,49 +74,49 @@
       </div>
     </section>
 
-  <!-- missão -->
-  <section id="whatwedo" class="tm-section-pad-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-center tm-text-success"  style="color: #000;">Uma Missão de Vida</h1>
-          <p class="text-center tm-section-desc" style="color: #000;">Impactar de <b>forma positiva</b> a vida das pessoas</p>
+    <!-- missão -->
+    <section id="whatwedo" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="text-center tm-section-title">Missão de Vida</h1>
+            <p class="text-center tm-section-title" style="font-size: 1.2em; margin-bottom: 0">Impactar de forma <b>Positiva</b> a Vida das pessoas</p>
+          </div>
+        </div>
+        <div class="row tm-news-row justify-content-md-center">
+          <div class="col-lg-4 col-md-6 col-sm-12 tm-news-col">
+            <article class="tm-news-item">
+              <img src="img/david-roi.png" alt="Quem Sou Eu" class="img-fluid tm-news-img">
+              <h3 class="tm-news-title">Quem Sou Eu</h3>
+              <p class="tm-news-text">
+                Com mais de 20 anos de experiência em desenvolvimento humano e liderança, sou David Savá, apaixonado por transformar potenciais em resultados. Minha jornada me levou a impactar milhares de vidas através de treinamentos e mentorias personalizadas.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12 tm-news-col">
+            <article class="tm-news-item">
+              <img src="img/breaking-chains-01.png" alt="Meu Trabalho" class="img-fluid tm-news-img">
+              <h3 class="tm-news-title">Meu Trabalho</h3>
+              <p class="tm-news-text">
+                Especializado em Programação Neurolinguística (PNL), inteligência emocional e desenvolvimento de soft skills. Trabalho com indivíduos, equipes e empresas, criando programas personalizados que impulsionam o crescimento pessoal e profissional de forma duradoura.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12 tm-news-col">
+            <article class="tm-news-item">
+              <img src="img/horizon.png" alt="Como Posso Te Ajudar" class="img-fluid tm-news-img">
+              <h3 class="tm-news-title">Posso Te Ajudar</h3>
+              <p class="tm-news-text">
+                Ofereço **palestras inspiradoras**, **workshops práticos** e **sessões de coaching individual/em grupo**. Se você busca alta performance, superação de desafios ou o aprimoramento de equipes, estou aqui para te guiar nessa jornada de sucesso e autoconhecimento.
+              </p>
+            </article>
+          </div>
         </div>
       </div>
-      <div class="row tm-news-row">
-        <div class="col-lg-4 col-md-6 col-sm-12 tm-news-col">
-          <article class="tm-news-item">
-            <img src="img/david-roi.png" alt="Quem Sou Eu" class="img-fluid tm-news-img">
-            <h3 class="tm-news-title">Quem Sou Eu</h3>
-            <p class="tm-news-text">
-              Com mais de 20 anos de experiência em desenvolvimento humano e liderança, sou David Savá, apaixonado por transformar potenciais em resultados. Minha jornada me levou a impactar milhares de vidas através de treinamentos e mentorias personalizadas.
-            </p>
-          </article>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-sm-12 tm-news-col">
-          <article class="tm-news-item">
-            <img src="img/breaking-chains.png" alt="Meu Trabalho" class="img-fluid tm-news-img">
-            <h3 class="tm-news-title">Meu Trabalho</h3>
-            <p class="tm-news-text">
-              Especializado em Programação Neurolinguística (PNL), inteligência emocional e desenvolvimento de soft skills. Trabalho com indivíduos, equipes e empresas, criando programas personalizados que impulsionam o crescimento pessoal e profissional de forma duradoura.
-            </p>
-          </article>
-        </div>
-
-        <div class="col-lg-4 col-md-12 col-sm-12 tm-news-col">
-          <article class="tm-news-item">
-            <img src="img/horizon.png" alt="Como Posso Te Ajudar" class="img-fluid tm-news-img">
-            <h3 class="tm-news-title">Como Posso Te Ajudar</h3>
-            <p class="tm-news-text">
-              Ofereço **palestras inspiradoras**, **workshops práticos** e **sessões de coaching individual/em grupo**. Se você busca alta performance, superação de desafios ou o aprimoramento de equipes, estou aqui para te guiar nessa jornada de sucesso e autoconhecimento.
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- galeria de serviços -->
+    </section>
+    <!-- galeria de serviços -->
     <section id="gallery" class="tm-section-pad-top">
       <div class="container tm-container-gallery">
         <div class="row">
@@ -129,54 +131,53 @@
           <div class="col-12">
             <div class="mx-auto tm-gallery-container">
               <div class="grid tm-gallery">
-                <a href="img/gallery-img-01.jpg"> <!-- produtos, páginas internas -->
+                <a href="javascript:void(0);" data-category="alcoolistas">
                   <figure class="effect-honey tm-gallery-item">
-                    <img src="img/cosmic-hand.png" alt="Image 1" class="img-fluid">
+                    <img src="img/cosmic-hand.png" alt="Alcoolistas" class="img-fluid">
                     <figcaption>
                       <h2><i><span> Alcoolistas</span></i></h2>
                     </figcaption>
                   </figure>
                 </a>
-                <a href="img/gallery-img-02.jpg">
+                <a href="javascript:void(0);" data-category="dependentes-quimicos">
                   <figure class="effect-honey tm-gallery-item">
-                    <img src="img/reaching-hand.png" alt="Image 2" class="img-fluid">
+                    <img src="img/reaching-hand.png" alt="Dependentes Químicos" class="img-fluid">
                     <figcaption>
                       <h2><i><span>Dependentes Químicos</span></i></h2>
                     </figcaption>
                   </figure>
                 </a>
-                <a href="img/gallery-img-03.jpg">
+                <a href="javascript:void(0);" data-category="internacoes">
                   <figure class="effect-honey tm-gallery-item">
-                    <img src="img/new-hope.png" alt="Image 3" class="img-fluid">
+                    <img src="img/new-hope.png" alt="Internações" class="img-fluid">
                     <figcaption>
                       <h2><i><span>Internações</span></i></h2>
                     </figcaption>
                   </figure>
                 </a>
-                <a href="img/gallery-img-04.jpg">
+                <a href="javascript:void(0);" data-category="treinamentos">
                   <figure class="effect-honey tm-gallery-item">
-                    <img src="img/new-becoming-life.png" alt="Image 4" class="img-fluid">
+                    <img src="img/new-becoming-life.png" alt="Treinamentos" class="img-fluid">
                     <figcaption>
                       <h2><i><span>Treinamentos</span></i></h2>
                     </figcaption>
                   </figure>
                 </a>
-                <a href="img/gallery-img-05.jpg">
+                <a href="javascript:void(0);" data-category="treinamentos">
                   <figure class="effect-honey tm-gallery-item">
-                    <img src="img/new-person.png" alt="Image 5" class="img-fluid">
+                    <img src="img/new-becoming-life.png" alt="Treinamentos" class="img-fluid">
                     <figcaption>
-                      <h2><i><span>Desenvolvimento</span></i></h2>
+                      <h2><i><span>Treinamentos</span></i></h2>
                     </figcaption>
                   </figure>
                 </a>
-              </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- serviços -->
+    </section>
+    <!-- serviços -->
 <!-- video, impacto
 <section id="impact-video" class="tm-section-pad-top tm-section-pad-bottom position-relative">
   <div class="tm-impact-background-image">
@@ -343,6 +344,8 @@
       <a href="https://www.instagram.com/terapeutadavidsava" class="instagram-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram"></i>
       </a>
+
+
       <script src="js/jquery-1.9.1.min.js"></script>
       <script src="slick/slick.min.js"></script>
       <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -351,5 +354,7 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/main.js"></script>
       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+      
     </body>
     </html>

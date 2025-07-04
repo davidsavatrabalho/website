@@ -177,12 +177,89 @@ $(document).ready(function() {
     });
 
 
-    // Pop up
-    $('.tm-gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        gallery: {
-            enabled: true
+    /* Galeria de vídeos */
+    const videoCategories = {
+        "alcoolistas": [{
+                src: 'videos/alcoolistas/fotor-ai-2025052921248.mp4',
+                thumb: 'img/cosmic-hand.png',
+                opts: {
+                    caption: '<h4>Alcoolistas: Entendendo a jornada</h4>',
+                    type: 'video'
+                }
+            }, {
+                src: 'videos/alcoolistas/fotor-ai-2025052921248.mp4',
+                thumb: 'img/cosmic-hand.png',
+                opts: {
+                    caption: '<h4>Alcoolistas: Entendendo a jornada</h4>',
+                    type: 'video'
+                }
+            },
+            // Add more videos for this category as needed
+        ],
+        "dependentes-quimicos": [{
+                src: 'videos/dependencia-quimica/como-escolher.mp4',
+                thumb: 'img/reaching-hand.png',
+                opts: {
+                    caption: '<h4>Dependentes Químicos: Como Escolher</h4>',
+                    type: 'video' // Indicate it's a video
+                }
+            }, {
+                src: 'videos/dependencia-quimica/como-escolher.mp4',
+                thumb: 'img/reaching-hand.png',
+                opts: {
+                    caption: '<h4>Dependentes Químicos: Como Escolher</h4>',
+                    type: 'video' // Indicate it's a video
+                }
+            },
+            // Add more videos for this category
+        ],
+        "internacoes": [{
+            src: 'videos/internacoes/clinicas-reabilitacao.mp4',
+            thumb: 'img/new-hope.png',
+            opts: {
+                caption: '<h4>Internações: O Primeiro Passo</h4>',
+                type: 'video'
+            }
+        }, ],
+        "treinamentos": [{
+            src: 'videos/treinamentos/fotor-ai-2025052921759.mp4',
+            thumb: 'img/new-becoming-life.png',
+            opts: {
+                caption: '<h4>Treinamentos: Transforme sua vida</h4>',
+                type: 'video'
+            }
+        }, ],
+    };
+
+    $('.grid.tm-gallery a').on('click', function(e) {
+        e.preventDefault(); // Prevent the default link behavior
+
+        const category = $(this).data('category'); // Get the category from the data-category attribute
+        const videosToOpen = videoCategories[category]; // Get the array of videos for this category
+
+        if (videosToOpen && videosToOpen.length > 0) {
+            // Open FancyBox with the dynamic set of videos
+            $.fancybox.open(videosToOpen, {
+                // FancyBox options for the video gallery
+                loop: true, // Allow looping through videos
+                buttons: [
+                    "zoom",
+                    "share",
+                    "slideShow",
+                    "fullScreen",
+                    "download",
+                    "thumbs",
+                    "close"
+                ],
+                // Video specific options
+                video: {
+                    autoStart: true // Autoplay video on open
+                }
+            });
+
+        } else {
+            console.warn(`No videos found for category: ${category}`);
+            alert('Nenhum vídeo disponível para esta categoria no momento.');
         }
     });
 
@@ -197,6 +274,41 @@ $(document).ready(function() {
      $testimonialsCarousel.on('mouseleave', function() {
          $testimonialsCarousel.slick('slickPause'); // Pause automatic sliding
      }); tava removendo funcionamentos embutidos do slick*/
+
+
+    /* slider pra páginas news - whatwedo */
+
+     /*$('#news-slider').slick({
+        slidesToShow: 3, // Default: show 3 slides (for desktop)
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false, // Show navigation dots
+        arrows: false, // Hide arrows by default (often good for mobile)
+        centerMode: true, // This helps with centering on mobile
+        centerPadding: '20px', // Space around the centered item
+        responsive: [
+            {
+                breakpoint: 992, // Breakpoint for medium screens and down
+                settings: {
+                    slidesToShow: 2, // On medium screens, show 2
+                    slidesToScroll: 1,
+                    centerMode: true, // Keep centered
+                    centerPadding: '20px',
+                    arrows: false,
+                }
+            },
+            {
+                breakpoint: 768, // Breakpoint for small screens (tablets/mobile) and down
+                settings: {
+                    slidesToShow: 1, // On mobile, show 1 slide at a time
+                    slidesToScroll: 1,
+                    centerMode: true, // This is crucial for centering the single item
+                    centerPadding: '20px', // Adjust as needed
+                    arrows: true, // Show arrows on mobile to navigate easily
+                }
+            }
+        ]
+    });*/
 
     const partnersSwiper = new Swiper('.partners-slider', {
         // Optional parameters
@@ -264,8 +376,7 @@ $(document).ready(function() {
         autoplay: true, // <-- CHANGE THIS TO TRUE
         autoplaySpeed: 3000, // <-- Adjust speed if 2 seconds feels too fast for videos/text (e.g., 3000-5000ms)
         pauseOnHover: true, // <-- This is the default, but explicitly stating it is clear
-
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
 
         responsive: [{
@@ -373,71 +484,71 @@ $(document).ready(function() {
         console.warn("WhatsApp button click listener NOT added. Missing .whatsapp-float or #whatsappPopup.");
     }
 
-/* audio button on video player */
+    /* audio button on video player */
 
-document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('impactVideoPlayer');
-    const muteToggleButton = document.getElementById('muteToggle');
-    const muteIcon = muteToggleButton.querySelector('i'); // Get the icon inside the button
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('impactVideoPlayer');
+        const muteToggleButton = document.getElementById('muteToggle');
+        const muteIcon = muteToggleButton.querySelector('i'); // Get the icon inside the button
 
-    // Set initial icon based on video state
-    if (video.muted) {
-        muteIcon.classList.remove('fa-volume-up');
-        muteIcon.classList.add('fa-volume-mute');
-    } else {
-        muteIcon.classList.remove('fa-volume-mute');
-        muteIcon.classList.add('fa-volume-up');
-    }
-
-    muteToggleButton.addEventListener('click', function() {
+        // Set initial icon based on video state
         if (video.muted) {
-            video.muted = false; // Unmute the video
-            muteIcon.classList.remove('fa-volume-mute');
-            muteIcon.classList.add('fa-volume-up'); // Change icon to volume up
-        } else {
-            video.muted = true; // Mute the video
             muteIcon.classList.remove('fa-volume-up');
-            muteIcon.classList.add('fa-volume-mute'); // Change icon to volume mute
+            muteIcon.classList.add('fa-volume-mute');
+        } else {
+            muteIcon.classList.remove('fa-volume-mute');
+            muteIcon.classList.add('fa-volume-up');
+        }
+
+        muteToggleButton.addEventListener('click', function() {
+            if (video.muted) {
+                video.muted = false; // Unmute the video
+                muteIcon.classList.remove('fa-volume-mute');
+                muteIcon.classList.add('fa-volume-up'); // Change icon to volume up
+            } else {
+                video.muted = true; // Mute the video
+                muteIcon.classList.remove('fa-volume-up');
+                muteIcon.classList.add('fa-volume-mute'); // Change icon to volume mute
+            }
+        });
+    });
+
+
+    $(window).scroll(function(e) {
+        if ($(document).scrollTop() > 120) {
+            $('.tm-navbar').addClass("scroll");
+        } else {
+            $('.tm-navbar').removeClass("scroll");
         }
     });
-});
 
+    // Close mobile menu after click 
+    $('#tmNav a').on('click', function() {
+        if ($('.navbar-collapse').hasClass('show')) {
+            $('.navbar-collapse').collapse('hide');
+        }
+    })
 
-$(window).scroll(function(e) {
-    if ($(document).scrollTop() > 120) {
-        $('.tm-navbar').addClass("scroll");
-    } else {
-        $('.tm-navbar').removeClass("scroll");
-    }
-});
+    // Scroll to corresponding section with animation
+    $('#tmNav').singlePageNav({
+        'easing': 'easeInOutExpo',
+        'speed': 600
+    });
 
-// Close mobile menu after click 
-$('#tmNav a').on('click', function() {
-    if ($('.navbar-collapse').hasClass('show')) {
-        $('.navbar-collapse').collapse('hide');
-    }
-})
+    // Add smooth scrolling to all links
+    // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+    $("a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
 
-// Scroll to corresponding section with animation
-$('#tmNav').singlePageNav({
-    'easing': 'easeInOutExpo',
-    'speed': 600
-});
-
-// Add smooth scrolling to all links
-// https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-$("a").on('click', function(event) {
-    if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 600, 'easeInOutExpo', function() {
-            window.location.hash = hash;
-        });
-    } // End if
-});
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 600, 'easeInOutExpo', function() {
+                window.location.hash = hash;
+            });
+        } // End if
+    });
 
 });
 // coluna de testemunhos em serviços

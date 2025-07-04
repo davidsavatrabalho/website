@@ -503,7 +503,6 @@ blockquote {
     pointer-events: auto; /* Allow clicks */
 }
 
-
 /* --- Impact Video Section --- */
 
 #impact-video {
@@ -515,7 +514,7 @@ blockquote {
     align-items: center; /* Horizontally center content */
     overflow: hidden; /* Hide any overflowing background image */
     background-position: center;
-    background: linear-gradient(to bottom,#070708,#020201); /* Starts very dark, transitions to your current dark blue */
+    background: linear-gradient(to bottom,#070708,#020201); * Starts very dark, transitions to your current dark blue */
 }
 
 /* Background Image Styling */
@@ -665,9 +664,8 @@ blockquote {
 
 /* In your main-css.css or tooplate-infinite-loop.css */
 #whatwedo {
-   
-    /*background-image: url(../img/breaking-chains-01.png); */
-    background: linear-gradient(to bottom, #FFFFFF, #020102);
+    
+    background-image: url(../img/horizon.png); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -988,19 +986,20 @@ blockquote {
 
 /* Styling for each individual column container */
 .tm-news-col {
+    max-width: 300px;
+    padding: 10px;
+    margin: 20px;
     display: flex; /* Make the column itself a flex container */
-    padding: 15px; /* Add internal padding for spacing between cards */
     /* This padding will create the "gap" between columns */
 }
 
 /* Styling for the news item card within each column */
 .tm-news-item {
     flex-grow: 1; /* Allows the item to grow and fill the available height in its column */
-    padding: 4px; /* Padding inside the card */
-    border-radius: 10px; /* Rounded corners for the card */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
     text-align: center; /* Center content within the card */
     background-color: rgba(255, 255, 255, 0.4); /* Slightly transparent white background (40% opaque) */
+    border-radius: 4px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
     display: flex; /* Use flexbox for internal content alignment (image, title, text) */
     flex-direction: column; /* Stack content vertically */
@@ -1009,6 +1008,7 @@ blockquote {
 
 /* Hover effect: make the background less transparent and shadow more prominent */
 .tm-news-item:hover {
+    transform: scale(1.04);
     background-color: rgba(255, 255, 255, 0.8); /* Less transparent white on hover (80% opaque) */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
 }
@@ -1017,19 +1017,19 @@ blockquote {
 .tm-news-img {
     width: 365px; /* Ensures image doesn't overflow its container */
     height: 247px; /* Fixed height for images to standardize appearance across items */
+    border-radius: 4px;
+    margin-top: 0px;
     object-fit: cover; /* Scales the image to fit its container without cropping, maintaining aspect ratio */
-    border-radius: 8px; /* Slightly rounded corners for images */
     margin-bottom: 20px; /* Space below the image */
     display: block; /* Essential for `margin: auto` to work */
-    margin-left: auto; /* Center image horizontally */
-    margin-right: auto; /* Center image horizontally */
+    margin-left: 0px; /* Center image horizontally */
+    margin-right: 0px; /* Center image horizontally */
 }
 
 /* Styling for the titles */
 .tm-news-title {
     font-size: 1.5em;
-    color: #000; /* Darker color for titles */
-    margin-bottom: 15px;
+    color: #123; /* Darker color for titles */
     font-weight: 700; /* Bold title */
     text-shadow:
         0 0 8px rgba(0, 0, 0, 0.4),   /* Inner glow, more opaque */
@@ -1039,8 +1039,11 @@ blockquote {
 
 /* Styling for the body text */
 .tm-news-text {
-    font-size: 0.9em;
-    color: #000;
+    font-size: 0.8em;
+    color: #123;
+    margin: 5px;
+    font-weight: 500;
+    text-align: left;
     text-shadow: 0 0 8px rgba(0,0,0,0.5), /* A slight blur */
                  0 0 15px rgba(0,0,0,0.3), /* Another, slightly larger blur */
                  0 0 20px rgba(255, 255, 0, 0.1);
@@ -1093,13 +1096,14 @@ blockquote {
 }
 .tm-gallery-container {
   padding-top: 20px;
+  padding: 0px;
   padding-bottom: 120px;
 }
 
 .tm-gallery-item {
   margin: 0 15px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.4); /* Slightly transparent white background (40% opaque) */
+  background-color: rgba(75,73,72,0.4); /* Slightly transparent white background (40% opaque) */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1205,12 +1209,12 @@ blockquote {
 /*---------------*/
 
 figure.effect-honey {
-  background: rgba(74, 55, 83, 0.5) !important;
+  background: rgba(75,73,72,0.4) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Add a subtle initial shadow */
   
   /* NEW: Smooth transition for background and shadow on hover */
   transition: background 0.35s ease, box-shadow 0.35s ease;
-  max-width: 300px;
+  max-width: 250px;
   margin-left: 50px;
 }
 
@@ -1478,9 +1482,8 @@ figure.effect-honey:hover h2 i {
 /* Página de contato */
 
 #contact {
-  color: white;
   background-color: #001828;
-  background-image: url(../img/horizon-03.png);
+  background-image: url(../img/horizon4.png);
   background-position: center;
   background-repeat: no-repeat;
   min-height: 980px;
@@ -1490,6 +1493,7 @@ figure.effect-honey:hover h2 i {
 }
 
 .contact-item {
+  color: #123;
   margin-left: 20px;
   margin-bottom: 30px;
 }

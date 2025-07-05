@@ -137,8 +137,15 @@ ok.
 - trocar cores background galeria serviços;
 - adicionar vídeos por categoria;
 
+ok.
 Impactar de forma positiva a vida das pessoas;
 
+
+
+04.07
+
+- no modo mobile, vídeos do serviço está sobrando página;
+- botãos nav ainda não funcionando;
 
 
 

@@ -532,7 +532,8 @@ $(document).ready(function() {
     // Scroll to corresponding section with animation
     $('#tmNav').singlePageNav({
         'easing': 'easeInOutExpo',
-        'speed': 600
+        'speed': 600,
+        'offset': navbarHeight
     });
 
     // Add smooth scrolling to all links

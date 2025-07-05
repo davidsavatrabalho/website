@@ -127,6 +127,12 @@ blockquote {
     color: #CCCCCC; /* Stays white when scrolled down, for contrast */
 }
 
+.tm-navbar.scroll .nav-item .nav-link.active {
+    color: #000;
+    background-color: #FFEA00; /* Ensure no background if you only want color */
+    /* Potentially add text-shadow or a subtle border here if you want more emphasis */
+}
+
 .tm-navbar.scroll .tm-nav-link:hover,
 .tm-navbar.scroll .tm-nav-link.current,
 .tm-nav-link:hover {
@@ -170,6 +176,11 @@ blockquote {
     color: #707070 !important;
     padding-right: 20px;
   }
+}
+
+.tm-navbar .nav-item .nav-link.active {
+    color: #FFEA00; /* Example: a distinct color like gold */
+    /* You can add text-shadow, background, etc. */
 }
 
 /* introduction elements */
@@ -1352,12 +1363,79 @@ figure.effect-honey:hover h2 i {
     transform: scale(1); /* Ensure it reverts from hover scale */
 }
 
+
+/* youtube Floating Button Styles */
+.youtube-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 120px;
+    right: 40px;
+    background-color: #FF0000; /* youtube brand color */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: /* Initial subtle shadow for depth */
+        0px 2px 5px rgba(0, 0, 0, 0.3),
+        /* First glow layer (inner, subtle) */
+        0 0 5px #FF0000,
+        /* Second glow layer (brighter, wider) */
+        0 0 15px #FF0000; /* Using the same green for the glow */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow to transition */
+}
+
+.youtube-float:focus,
+.youtube-float:active {
+    outline: none; /* Removes the default browser outline */
+    /* Ensure styles revert to the base state (or define a specific 'clicked' state) */
+    background-color: #FF0000; /* Revert to base youtube green */
+    box-shadow: /* Revert to base glow */
+        0px 2px 5px rgba(0, 0, 0, 0.3),
+        0 0 5px #FF0000,
+        0 0 15px #FF0000;
+    color: #FFF; /* Ensure icon color stays white */
+}
+
+.youtube-float:hover {
+    background-color: #E60000; /* Slightly darker green on hover */
+    box-shadow: /* Enhanced glow on hover */
+        0px 2px 8px rgba(0, 0, 0, 0.4), /* Slightly stronger base shadow */
+        0 0 10px #FF0000, /* Brighter inner glow */
+        0 0 30px #FF0000, /* Much wider, more intense glow */
+        0 0 60px #FF0000; /* Even wider, softer halo */
+}
+
+/* Optional: Adjust for smaller screens if needed */
+@media (max-width: 768px) {
+    .youtube-float {
+        width: 50px;
+        height: 50px;
+        bottom: 80px;
+        right: 20px;
+        font-size: 25px;
+    }
+    .youtube-float:hover {
+        /* Adjust hover glow for smaller screens if different intensity is desired */
+        box-shadow: /* Enhanced glow on hover for smaller screens */
+            0px 2px 6px rgba(0, 0, 0, 0.3),
+            0 0 8px #25D366,
+            0 0 20px #25D366;
+    }
+}
+
+
 /* WhatsApp Floating Button Styles */
 .whatsapp-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 120px;
+    bottom: 200px;
     right: 40px;
     background-color: #25D366; /* WhatsApp brand color */
     color: #FFF;
@@ -1404,7 +1482,7 @@ figure.effect-honey:hover h2 i {
     .whatsapp-float {
         width: 50px;
         height: 50px;
-        bottom: 80px;
+        bottom: 140px;
         right: 20px;
         font-size: 25px;
     }
@@ -1421,7 +1499,7 @@ figure.effect-honey:hover h2 i {
 .whatsapp-popup {
     position: fixed;
     /* Position slightly above and aligned with the right of the button */
-    bottom: 195px; /* Adjust this value: whatsapp-float height (60px) + desired spacing (~15px) + popup height (~40px) */
+    bottom: 275px; /* Adjust this value: whatsapp-float height (60px) + desired spacing (~15px) + popup height (~40px) */
     right: 45px; /* Aligns with the right of the button */
 
     background-color: #fefefe; /* Soft white background */
@@ -1469,7 +1547,7 @@ figure.effect-honey:hover h2 i {
 /* Adjust for smaller screens if needed (matching your whatsapp-float media query) */
 @media (max-width: 768px) {
     .whatsapp-popup {
-        bottom: 145px; /* Adjust based on smaller button height (50px + spacing) */
+        bottom: 210px; /* Adjust based on smaller button height (50px + spacing) */
         right: 25px; /* Adjust to match smaller button's right position */
         max-width: 180px;
         font-size: 1em;

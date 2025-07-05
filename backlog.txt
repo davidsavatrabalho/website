@@ -142,10 +142,32 @@ Impactar de forma positiva a vida das pessoas;
 
 
 
-04.07
+05.07
 
 - no modo mobile, vídeos do serviço está sobrando página;
 - botãos nav ainda não funcionando;
+- meio dos botões wpp/yt laranja, verificar;
+- adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -513,7 +513,8 @@ $(document).ready(function() {
         });
     });
 
-
+    var navbarHeight = $('.tm-navbar').outerHeight();
+    
     $(window).scroll(function(e) {
         if ($(document).scrollTop() > 120) {
             $('.tm-navbar').addClass("scroll");
@@ -533,23 +534,12 @@ $(document).ready(function() {
     $('#tmNav').singlePageNav({
         'easing': 'easeInOutExpo',
         'speed': 600,
-        'offset': navbarHeight
+        'offset': navbarHeight,
+        'currentClass': 'active',
     });
 
+    console.log("Navbar Height:", navbarHeight);
     // Add smooth scrolling to all links
     // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 600, 'easeInOutExpo', function() {
-                window.location.hash = hash;
-            });
-        } // End if
-    });
-
 });
 // coluna de testemunhos em serviços

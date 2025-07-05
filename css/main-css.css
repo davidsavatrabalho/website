@@ -861,6 +861,19 @@ blockquote {
     color: #013220;
 }
 
+@media (max-width: 991px) { /* Targets screens smaller than large desktops */
+    .tm-stat-value {
+        font-size:  2.5em; /* Slightly less padding on smaller screens */
+    }
+    .tm-stat-label {
+        font-size:  1.0em;
+    }
+    
+}
+@media (max-width: 768px) {
+
+}
+
 .tm-text-success{
     color: #013220;
     text-shadow:
@@ -993,6 +1006,7 @@ blockquote {
     flex-wrap: wrap; /* Allow columns to wrap to the next line on smaller screens */
     align-items: stretch; /* Makes all direct children (columns) stretch to the same height */
     margin-top: 0px; /* Space below the section title/description */
+    justify-content: center;
 }
 
 /* Styling for each individual column container */

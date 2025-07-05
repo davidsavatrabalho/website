@@ -149,7 +149,9 @@ Impactar de forma positiva a vida das pessoas;
 - meio dos botões wpp/yt laranja, verificar;
 - adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
 
-
+- seção 'missão' descentralizada em mobiles
+- diminuir a fonte seção trajetória
+- verificar espaço margem right;
 
 
 

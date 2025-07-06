@@ -514,7 +514,7 @@ $(document).ready(function() {
     });
 
     var navbarHeight = $('.tm-navbar').outerHeight();
-    
+
     $(window).scroll(function(e) {
         if ($(document).scrollTop() > 120) {
             $('.tm-navbar').addClass("scroll");

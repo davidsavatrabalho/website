@@ -5,6 +5,12 @@ senha wifi, 5180453103111360
 	2. recuso-me a desenvolver um site tao horroroso quanto as referencias nacionais;
 	3. desenvolvimento objetivo, rápido, eficiente e perfeccionista.
 
+
+obj:
+atrair cliente à venda de cursos sobre PNL, inteligencia emocional e desenvolvimento de Impacto, com um site objetivo, moderno e robusto.
+
+
+
 Metas 27.05
 
 - sites referencia,
@@ -144,14 +150,16 @@ Impactar de forma positiva a vida das pessoas;
 
 05.07
 
-- no modo mobile, vídeos do serviço está sobrando página;
 - botãos nav ainda não funcionando;
 - meio dos botões wpp/yt laranja, verificar;
-- adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
-
-- seção 'missão' descentralizada em mobiles
 - diminuir a fonte seção trajetória
-- verificar espaço margem right;
+
+ok.
+
+- no modo mobile, vídeos do serviço está sobrando página;
+- adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
+- adicionar videos no popup quem sou eu;
+
 
 
 

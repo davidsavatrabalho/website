@@ -2,6 +2,19 @@
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
 
+img {
+    max-width: 100%; /* Ensures image doesn't exceed its parent's width */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Helps prevent extra space below images */
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: "Raleway", sans-serif;
     font-size: 1.2em;
@@ -38,6 +51,10 @@ blockquote {
   line-height: 1.8em;
 }
 
+.row {
+    margin-right: 15px;
+    margin-left: 15px;
+}
 .tm-section-pad-top {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -133,6 +150,11 @@ blockquote {
     /* Potentially add text-shadow or a subtle border here if you want more emphasis */
 }
 
+.tm-navbar .nav-item .nav-link.active {
+    color: white; /* Example: a distinct color like gold */
+    /* You can add text-shadow, background, etc. */
+}
+
 .tm-navbar.scroll .tm-nav-link:hover,
 .tm-navbar.scroll .tm-nav-link.current,
 .tm-nav-link:hover {
@@ -176,11 +198,6 @@ blockquote {
     color: #707070 !important;
     padding-right: 20px;
   }
-}
-
-.tm-navbar .nav-item .nav-link.active {
-    color: #FFEA00; /* Example: a distinct color like gold */
-    /* You can add text-shadow, background, etc. */
 }
 
 /* introduction elements */
@@ -863,10 +880,10 @@ blockquote {
 
 @media (max-width: 991px) { /* Targets screens smaller than large desktops */
     .tm-stat-value {
-        font-size:  2.5em; /* Slightly less padding on smaller screens */
+        font-size:  2.1em; /* Slightly less padding on smaller screens */
     }
     .tm-stat-label {
-        font-size:  1.0em;
+        font-size:  0.9em;
     }
     
 }
@@ -1301,8 +1318,22 @@ figure.effect-honey:hover h2 i {
 
 .tm-container-gallery {
     padding-top: 30px;
-  padding: 0 !important;
-    }
+    padding: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1275px;
+  }
+
+  .tm-container-gallery {
+    max-width: 1290px;
+  }
+
+  .tm-container-contact {
+    max-width: 1063px;
+  }
+}
 
 /* Contact */
 
@@ -1674,19 +1705,6 @@ figure.effect-honey:hover h2 i {
 p {
   line-height: 1.9;
 }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1275px;
-  }
-
-  .tm-container-gallery {
-    max-width: 1290px;
-  }
-
-  .tm-container-contact {
-    max-width: 1063px;
-  }
-}
 
 @media (max-width: 991px) {
   .tm-intro-text-container {
@@ -1714,7 +1732,7 @@ p {
   .tm-gallery-container {
     max-width: 220px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: -30px;
   }
 
   .tm-gallery-container-2 {

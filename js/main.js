@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 
     // Function to animate a single number
-    function animateNumber(element, start, end, duration, applySuffix = false) { // Added applySuffix parameter
+    function animateNumber(element, start, end, duration, applySuffix = false, applyInfinite = false) { // Added applySuffix parameter
         let current = start;
         const range = end - start;
         const increment = end > start ? 1 : -1;
@@ -54,6 +54,9 @@ $(document).ready(function() {
                 displayNum = end; // Ensure the final displayed number is the exact end
                 if (applySuffix) { // Only add suffix at the very end if applySuffix is true
                     currentSuffix = '+';
+                }
+                if (needsInfinite) {
+                    displayNum = $infin;
                 }
                 clearInterval(timer); // Stop the animation
             }
@@ -74,15 +77,20 @@ $(document).ready(function() {
                 const $valueDiv = $(this).find('.tm-stat-value');
                 const targetNumber = parseInt($valueDiv.data('target'));
                 let needsSuffix = true; // Flag to indicate if this number should eventually have a '+'
+                let needsInfinite = false;
 
                 // Updated logic for which numbers get the '+'
                 if (targetNumber === 20 || targetNumber === 250) {
                     needsSuffix = true;
                 }
 
+                if (targetNumber === 13500) {
+                    needsInfinite = true;
+                }   
+
                 // Add a small delay for each item for a nicer effect
                 setTimeout(() => {
-                    animateNumber($valueDiv, 0, targetNumber, 3500, needsSuffix); // Pass needsSuffix
+                    animateNumber($valueDiv, 0, targetNumber, 500, needsSuffix, needsInfinite); // Pass needsSuffix
                 }, index * 200); // 200ms delay between each item
             });
             // Destroy the waypoint after it fires once to prevent re-animation on scroll up/down

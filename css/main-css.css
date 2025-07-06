@@ -1093,34 +1093,6 @@ blockquote {
     margin-bottom: 0; /* Remove default paragraph bottom margin if it's the last element */
 }
 
-/* Responsive Adjustments for smaller screens */
-@media (max-width: 991px) { /* Targets screens smaller than large desktops */
-    .tm-news-item {
-        padding: 25px; /* Slightly less padding on smaller screens */
-    }
-    .tm-news-img {
-        height: 100px; /* Slightly smaller images */
-        margin-bottom: 15px;
-    }
-    .tm-news-title {
-        font-size: 1.6em;
-        margin-bottom: 10px;
-    }
-    .tm-news-text {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 767px) { /* Targets screens smaller than medium desktops (e.g., tablets in portrait, phones) */
-    .tm-news-col {
-        /* When columns stack (col-sm-12), the side padding needs to be consistent */
-        padding: 10px 15px; /* Adjust side padding as needed for single column */
-    }
-    .tm-news-item {
-        padding: 20px;
-    }
-}
-
 /* Gallery elements */
 
 #gallery {
@@ -1130,11 +1102,8 @@ blockquote {
     background-position: center;
     background-repeat: no-repeat;
     object-fit: fill;
-
-    /* #101820 is a very deep, almost black-blue.
-       #1a2d42 is your existing dark blue. */
-
 }
+
 .tm-gallery-container {
   padding-top: 20px;
   padding: 0px;
@@ -1610,9 +1579,16 @@ figure.effect-honey:hover h2 i {
   background-repeat: no-repeat;
   min-height: 980px;
   position: relative;
-  background-attachment: fixed;
+  height: auto;
   /*padding-top: 100px;*/
 }
+
+@media (max-width: 768px) {
+    #contact {
+        background-attachment: fixed;
+    }
+}
+
 
 .contact-item {
   color: #123;

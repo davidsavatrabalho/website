@@ -11,6 +11,8 @@ atrair cliente à venda de cursos sobre PNL, inteligencia emocional e desenvolvi
 
 
 - algo que demonstre fortemente a sua longa trajetória e sua expertise;
+- que venda rapido (site pablo) e seja objetivo;
+- que tambem demonstre a sua vontade de fazer isso como propósito de missão;
 
 
 
@@ -156,12 +158,13 @@ Impactar de forma positiva a vida das pessoas;
 - botãos nav ainda não funcionando;
 - meio dos botões wpp/yt laranja, verificar;
 - diminuir a fonte seção trajetória
+- adicionar videos no popup quem sou eu;
+- no modo mobile, vídeos do serviço está sobrando página;
+- adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
 
 ok.
 
-- no modo mobile, vídeos do serviço está sobrando página;
-- adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
-- adicionar videos no popup quem sou eu;
+
 
 
 

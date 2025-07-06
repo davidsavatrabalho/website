@@ -37,68 +37,82 @@ $(document).ready(function() {
 
 
     // Function to animate a single number
-    function animateNumber(element, start, end, duration, applySuffix = false, applyInfinite = false) { // Added applySuffix parameter
-        let current = start;
-        const range = end - start;
-        const increment = end > start ? 1 : -1;
-        // Calculate stepTime, ensuring it's at least 1ms to avoid division by zero if range is 0 or very small
-        const stepTime = Math.max(1, Math.abs(Math.floor(duration / range)));
+    function animateNumber(element, start, end, duration, applySuffix = false, applyInfinite = false) {
+    let current = start;
+    const range = end - start;
+    // Calculate stepTime, ensuring it's at least 1ms to avoid division by zero if range is 0 or very small
+    // Use Math.ceil instead of Math.floor for stepTime to ensure enough steps for small ranges
+    const stepTime = Math.max(1, Math.abs(Math.ceil(duration / range))); 
 
-        const timer = setInterval(() => {
-            current += increment;
-            // Ensure we don't go past the end number
-            let displayNum = current;
-            let currentSuffix = '';
+    const timer = setInterval(() => {
+        // Determine the next value based on the direction of animation
+        if (end > start) {
+            current += 1;
+        } else {
+            current -= 1;
+        }
 
-            if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-                displayNum = end; // Ensure the final displayed number is the exact end
-                if (applySuffix) { // Only add suffix at the very end if applySuffix is true
+        let displayNum = current;
+        let currentSuffix = '';
+
+        // Check if animation should stop or if we've reached/passed the end value
+        const animationFinished = (end > start && current >= end) || (end < start && current <= end);
+
+        if (animationFinished) {
+            clearInterval(timer); // Stop the animation
+
+            if (applyInfinite) {
+                $(element).html('&infin;'); // Display infinity symbol as HTML
+                return; // Exit the function to prevent further number display
+            } else {
+                displayNum = end; // Ensure the exact end number is displayed
+                if (applySuffix) {
                     currentSuffix = '+';
                 }
-                if (needsInfinite) {
-                    displayNum = $infin;
-                }
-                clearInterval(timer); // Stop the animation
+            }
+        }
+        
+        // If not infinite and animation is still running, or just finished with a number
+        $(element).text(displayNum + currentSuffix);
+    }, stepTime);
+}
+
+// Your existing Waypoints and initialization logic remains the same:
+// Initialize numbers to 0 and set up Waypoints
+$('.tm-stat-value').each(function() {
+    $(this).text('0'); // Ensure they start at 0
+});
+
+// Use Waypoints to trigger animation when the section is in view
+$('#numbers-speak').waypoint(function(direction) {
+    if (direction === 'down') { // Only animate when scrolling down into view
+        $('.tm-stat-item').each(function(index) {
+            const $valueDiv = $(this).find('.tm-stat-value');
+            const targetNumber = parseInt($valueDiv.data('target'));
+            let needsSuffix = false; // Default to false unless explicitly set
+            let needsInfinite = false;
+
+            // Updated logic for which numbers get the '+'
+            if (targetNumber === 20 || targetNumber === 250 || targetNumber === 4000) {
+                needsSuffix = true;
             }
 
-            $(element).text(displayNum + currentSuffix);
-        }, stepTime);
+            if (targetNumber === 4500) {
+                needsInfinite = true;
+            }    
+
+            // Add a small delay for each item for a nicer effect
+            setTimeout(() => {
+                // Pass needsSuffix and needsInfinite to the animateNumber function
+                animateNumber($valueDiv, 0, targetNumber, 1500, needsSuffix, needsInfinite);
+            }, index * 200); // 200ms delay between each item
+        });
+        // Destroy the waypoint after it fires once to prevent re-animation on scroll up/down
+        this.destroy();
     }
-
-    // Initialize numbers to 0 and set up Waypoints
-    $('.tm-stat-value').each(function() {
-        $(this).text('0'); // Ensure they start at 0
-    });
-
-    // Use Waypoints to trigger animation when the section is in view
-    $('#numbers-speak').waypoint(function(direction) {
-        if (direction === 'down') { // Only animate when scrolling down into view
-            $('.tm-stat-item').each(function(index) {
-                const $valueDiv = $(this).find('.tm-stat-value');
-                const targetNumber = parseInt($valueDiv.data('target'));
-                let needsSuffix = true; // Flag to indicate if this number should eventually have a '+'
-                let needsInfinite = false;
-
-                // Updated logic for which numbers get the '+'
-                if (targetNumber === 20 || targetNumber === 250) {
-                    needsSuffix = true;
-                }
-
-                if (targetNumber === 13500) {
-                    needsInfinite = true;
-                }   
-
-                // Add a small delay for each item for a nicer effect
-                setTimeout(() => {
-                    animateNumber($valueDiv, 0, targetNumber, 500, needsSuffix, needsInfinite); // Pass needsSuffix
-                }, index * 200); // 200ms delay between each item
-            });
-            // Destroy the waypoint after it fires once to prevent re-animation on scroll up/down
-            this.destroy();
-        }
-    }, {
-        offset: '95%' // Trigger when 80% of the section is visible from the top of the viewport
-    });
+}, {
+    offset: '95%' // Trigger when 80% of the section is visible from the top of the viewport
+});
 
 
     console.log("jQuery document ready! main.js is running."); // Add this for initial check

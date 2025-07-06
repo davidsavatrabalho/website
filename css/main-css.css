@@ -151,7 +151,6 @@ blockquote {
 }
 
 .tm-navbar .nav-item .nav-link.active {
-    color: white; /* Example: a distinct color like gold */
     /* You can add text-shadow, background, etc. */
 }
 

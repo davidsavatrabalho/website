@@ -97,7 +97,7 @@ $('#numbers-speak').waypoint(function(direction) {
                 needsSuffix = true;
             }
 
-            if (targetNumber === 4500) {
+            if (targetNumber === 9500) {
                 needsInfinite = true;
             }    
 
@@ -253,17 +253,12 @@ $('#numbers-speak').waypoint(function(direction) {
         }, ],
     };
 
-    $('.grid.tm-gallery a').on('click', function(e) {
-        e.preventDefault(); // Prevent the default link behavior
-
-        const category = $(this).data('category'); // Get the category from the data-category attribute
-        const videosToOpen = videoCategories[category]; // Get the array of videos for this category
+    function openCategoryVideos(category, contextName = 'item') {
+        const videosToOpen = videoCategories[category];
 
         if (videosToOpen && videosToOpen.length > 0) {
-            // Open FancyBox with the dynamic set of videos
             $.fancybox.open(videosToOpen, {
-                // FancyBox options for the video gallery
-                loop: true, // Allow looping through videos
+                loop: true,
                 buttons: [
                     "zoom",
                     "share",
@@ -273,17 +268,34 @@ $('#numbers-speak').waypoint(function(direction) {
                     "thumbs",
                     "close"
                 ],
-                // Video specific options
                 video: {
-                    autoStart: true // Autoplay video on open
+                    autoStart: true
                 }
             });
-
         } else {
-            console.warn(`No videos found for category: ${category}`);
+            // Use contextName for more informative console warnings/alerts
+            console.warn(`No videos found for category: ${category} for ${contextName}.`);
             alert('Nenhum vídeo disponível para esta categoria no momento.');
         }
+    }
+    // --- END REUSABLE FUNCTION ---
+
+
+    // --- Original Gallery Click Handler ---
+    $('.grid.tm-gallery a').on('click', function(e) {
+        e.preventDefault();
+        const category = $(this).data('category');
+        openCategoryVideos(category, 'gallery item'); // Call the reusable function
     });
+
+    // --- NEW Click Handler for tm-news-col ---
+    $('.tm-news-link').on('click', function(e) {
+        e.preventDefault();
+        const category = $(this).data('category');
+        openCategoryVideos(category, 'news item'); // Call the reusable function
+    });
+
+    
 
     // Get a reference to your carousel element
     /* var $testimonialsCarousel = $('.testimonials-carousel');

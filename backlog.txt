@@ -140,7 +140,7 @@ ok.
 - galeria, colocar opção de vídeos;
 - categorias em cada janela na galeria de serviços
 
-02.07
+02.07>>04.07
 
 - adicionar seção Quem Sou Eu // O que eu Faço // Como posso te ajudar >> missão 
 ok.
@@ -153,7 +153,7 @@ Impactar de forma positiva a vida das pessoas;
 
 
 
-05.07
+05.07>>06.07
 
 - botãos nav ainda não funcionando;
 - meio dos botões wpp/yt laranja, verificar;
@@ -163,6 +163,11 @@ Impactar de forma positiva a vida das pessoas;
 - adicionar infinito ao fim da contagem de pessoas impactadas, adicionar fundo e peso às palavras;
 
 ok.
+
+07.07
+
+- adicionar seção em serviços,
+
 
 
 

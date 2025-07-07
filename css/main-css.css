@@ -748,8 +748,8 @@ blockquote {
 
 
 .testimonials-carousel {
-    padding: 20px;
     border-radius: 8px;
+    align-items:  stretch;
 }
 
 .testimonial-item {
@@ -759,9 +759,10 @@ blockquote {
 
 /* New CSS for testimonial photos */
 .testimonial-item .testimonial-photo {
-    width: 272px; /* Set a fixed width for the photo */
-    height: 183px;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: auto; /* Set a fixed width for the photo */
+    height: auto;
+    max-width: 100%;
+    object-fit: fill; /* Ensures the image covers the area without distortion */
     object-position: center;
     margin-bottom: 25px; /* Space between the photo and the quote */
     margin-left: auto; /* Center the image horizontally */

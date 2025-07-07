@@ -773,9 +773,9 @@ blockquote {
 }
 
 .testimonial-item blockquote {
-    font-size: 1.15em;
+    font-size: 1.10em;
     font-weight: 600;
-    line-height: 1.8;
+    line-height: 1.7;
     color: #123;
     margin-bottom: 15px;
     border-left: 5px solid #B8860B;
@@ -788,11 +788,6 @@ blockquote {
     font-size: 0.95em;
     color: #777;
 }
-
-@media (max-width: 480) {
-
-}
-
 
 /* Customizing Slick Arrows (Optional - if default doesn't fit your theme) */
 .slick-prev,
@@ -1294,6 +1289,12 @@ figure.effect-honey:hover h2 i {
 .tm-container-gallery {
     padding-top: 30px;
     padding: 0 !important;
+}
+
+@media (max-width: 480px) {
+    .effect-honey {
+        margin-left: 0px !important;
+    }
 }
 
 @media (min-width: 1200px) {

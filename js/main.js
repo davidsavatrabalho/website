@@ -179,7 +179,7 @@ $('#numbers-speak').waypoint(function(direction) {
 
     /* Slick initializations and configurations */
 
-    $('.testimonials-carousel').slick({
+    $('.news-carousel-wrapper').slick({
         infinite: true,
         slidesToShow: 2, // Show one testimonial at a time
         slidesToScroll: 1,
@@ -199,6 +199,25 @@ $('#numbers-speak').waypoint(function(direction) {
         }]
     });
 
+    $('.testimonials-carousel').slick({
+        infinite: true,
+        slidesToShow: 2, // Show one testimonial at a time
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5500, // Change slide every 5 seconds
+        arrows: true, // Enable arrows!
+        dots: true, // Enable pagination dots
+        pauseOnHover: true, // Pause autoplay on hover
+        //adaptiveHeight: true, // Adjust height based on current slide's content
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                arrows: true, // Maybe no arrows on small screens
+                dots: true,
+            }
+        }]
+    });
 
     /* Galeria de vídeos */
     const videoCategories = {

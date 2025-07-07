@@ -166,7 +166,13 @@ ok.
 
 07.07
 
-- adicionar seção em serviços,
+- adicionar seção em serviços, "à la" Febracis, texto, imagem de impacto, botão rápido de "inscrição";
+- adicionar seção de testemunhos, 3, idoso (dori), jovem (rodrigo), adulto que caiu (fabio);
+
+- adicionar slidemobile pra seção "Missão"
+
+
+ 
 
 
 

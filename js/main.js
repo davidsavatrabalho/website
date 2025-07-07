@@ -181,10 +181,10 @@ $('#numbers-speak').waypoint(function(direction) {
 
     $('.testimonials-carousel').slick({
         infinite: true,
-        slidesToShow: 1, // Show one testimonial at a time
+        slidesToShow: 2, // Show one testimonial at a time
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2500, // Change slide every 5 seconds
+        autoplaySpeed: 5500, // Change slide every 5 seconds
         arrows: true, // Enable arrows!
         dots: true, // Enable pagination dots
         pauseOnHover: true, // Pause autoplay on hover
@@ -192,6 +192,7 @@ $('#numbers-speak').waypoint(function(direction) {
         responsive: [{
             breakpoint: 768,
             settings: {
+                slidesToShow: 1,
                 arrows: true, // Maybe no arrows on small screens
                 dots: true,
             }
@@ -295,7 +296,7 @@ $('#numbers-speak').waypoint(function(direction) {
         openCategoryVideos(category, 'news item'); // Call the reusable function
     });
 
-    
+
 
     // Get a reference to your carousel element
     /* var $testimonialsCarousel = $('.testimonials-carousel');

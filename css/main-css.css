@@ -753,16 +753,16 @@ blockquote {
 }
 
 .testimonial-item {
-    text-align: center;
+    text-align: left;
     padding: 10px 20px;
 }
 
 /* New CSS for testimonial photos */
 .testimonial-item .testimonial-photo {
-    width: 100px; /* Set a fixed width for the photo */
-    height: 100px; /* Set a fixed height to ensure it's a perfect circle */
+    width: 272px; /* Set a fixed width for the photo */
+    height: 183px;
     object-fit: cover; /* Ensures the image covers the area without distortion */
-    border-radius: 50%; /* Makes the image circular */
+    object-position: center;
     margin-bottom: 25px; /* Space between the photo and the quote */
     margin-left: auto; /* Center the image horizontally */
     margin-right: auto; /* Center the image horizontally */
@@ -787,6 +787,11 @@ blockquote {
     font-size: 0.95em;
     color: #777;
 }
+
+@media (max-width: 480) {
+
+}
+
 
 /* Customizing Slick Arrows (Optional - if default doesn't fit your theme) */
 .slick-prev,

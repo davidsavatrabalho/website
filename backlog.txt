@@ -170,14 +170,22 @@ ok.
 - adicionar slide área 'quem sou eu'; 
 
 
-sim, tou começando a ver o presente manifestar meu estado mental, REAL, q é manifestamente visível no diálogo contínuo, 
+ok.
 
 
+- adicionar seção em serviços, "à la" Febracis, texto, imagem de impacto, botão rápido de "inscrição";
+- adicionar slidemobile pra seção "Missão"
 
 ok.
-- adicionar seção em serviços, "à la" Febracis, texto, imagem de impacto, botão rápido de "inscrição";
 
-- adicionar slidemobile pra seção "Missão"
+
+08.07
+
+- ajeitar tamanho dos items em new-cols;
+- adicionar seção com texto e imagem de impacto;
+
+
+
 
 
 

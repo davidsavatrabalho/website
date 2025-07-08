@@ -1015,34 +1015,31 @@ blockquote {
 #news-section {
     padding-top: 80px; /* Adjust top spacing for the section */
     padding-bottom: 80px; /* Adjust bottom spacing for the section */
+    display: flex;
+    align-items: center;
     /* No specific background-color here, as we want the page's underlying background to show */
 }
 
 /* Flexbox container for the news columns to ensure equal height */
 .tm-news-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow columns to wrap to the next line on smaller screens */
     align-items: stretch; /* Makes all direct children (columns) stretch to the same height */
     margin-top: 0px; /* Space below the section title/description */
     justify-content: center;
+    box-sizing: border-box;
 }
 
-/* Styling for each individual column container */
-.tm-news-col {
-    max-width: 300px;
-    padding: 10px;
-    margin: 20px;
-    display: flex; /* Make the column itself a flex container */
-    /* This padding will create the "gap" between columns */
-}
 
 /* Styling for the news item card within each column */
 .tm-news-item {
+    height: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin: 10px;
+    flex-shrink: 1;
     flex-grow: 1; /* Allows the item to grow and fill the available height in its column */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-    text-align: center; /* Center content within the card */
-    background-color: rgba(255, 255, 255, 0.4); /* Slightly transparent white background (40% opaque) */
-    border-radius: 4px;
+
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent white background (40% opaque) */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
     display: flex; /* Use flexbox for internal content alignment (image, title, text) */
     flex-direction: column; /* Stack content vertically */
@@ -1057,14 +1054,13 @@ blockquote {
 }
 
 /* Styling for the images within the news items */
-.tm-news-img {
-    width: 365px; /* Ensures image doesn't overflow its container */
+.tm-news-item img {
+    width: 100%; /* Ensures image doesn't overflow its container */
     height: 247px; /* Fixed height for images to standardize appearance across items */
-    border-radius: 4px;
     margin-top: 0px;
     object-fit: cover; /* Scales the image to fit its container without cropping, maintaining aspect ratio */
     margin-bottom: 20px; /* Space below the image */
-    display: block; /* Essential for `margin: auto` to work */
+    /*display: block; /* Essential for `margin: auto` to work */
     margin-left: 0px; /* Center image horizontally */
     margin-right: 0px; /* Center image horizontally */
 }
@@ -1072,8 +1068,10 @@ blockquote {
 /* Styling for the titles */
 .tm-news-title {
     font-size: 1.5em;
-    color: #123; /* Darker color for titles */
+    color: #000; /* Darker color for titles */
     font-weight: 700; /* Bold title */
+    padding: 2px;
+    text-align: center;
     text-shadow:
         0 0 8px rgba(0, 0, 0, 0.4),   /* Inner glow, more opaque */
         0 0 15px rgba(0, 0, 0, 0.25),  /* Mid-level glow, softer */
@@ -1081,20 +1079,26 @@ blockquote {
 }
 
 /* Styling for the body text */
-.tm-news-text {
-    font-size: 0.8em;
-    color: #123;
-    margin: 5px;
-    font-weight: 500;
+.tm-news-item blockquote {
+    font-size: 0.9em;
+    color: #000;
+    margin: 3px;
+    font-weight: 600;
     text-align: left;
     text-shadow: 0 0 8px rgba(0,0,0,0.5), /* A slight blur */
                  0 0 15px rgba(0,0,0,0.3), /* Another, slightly larger blur */
                  0 0 20px rgba(255, 255, 0, 0.1);
     line-height: 1.6;
     flex-grow: 1; /* Allows text to take up remaining space, pushing content down if needed for equal height */
+
     margin-bottom: 0; /* Remove default paragraph bottom margin if it's the last element */
+
 }
 
+.news-carousel-wrapper .slick-arrow {
+    color: #E0E0E0 !important; /* Smoothly gray color - you can experiment with #CCC, #BFBFBF */
+    
+}
 /* Gallery elements */
 
 #gallery {

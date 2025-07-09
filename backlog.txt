@@ -185,6 +185,17 @@ ok.
 - adicionar seção com texto e imagem de impacto;
 
 
+09.07
+
+- ajeitar margin-bottom seção impacto, 
+
+
+
+
+https://en.uesp.net/wiki/Special:EsoBuildData?id=598259
+https://en.uesp.net/wiki/Special:EsoBuildData?id=598012
+
+
 
 
 

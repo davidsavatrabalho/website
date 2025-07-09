@@ -1233,7 +1233,6 @@ figure.effect-honey {
   /* NEW: Smooth transition for background and shadow on hover */
   transition: background 0.35s ease, box-shadow 0.35s ease;
   max-width: 250px;
-  margin-left: 50px;
 }
 
 figure.effect-honey img {
@@ -1314,6 +1313,7 @@ figure.effect-honey:hover h2 i {
 
 .tm-container-contact {
     max-width: 1063px;
+    margin-bottom: 100px;
 }
 }
 
@@ -1676,9 +1676,12 @@ figure.effect-honey:hover h2 i {
   background-image: url(../img/horizon4.png);
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 980px;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: min-content;
+  max-height: 80%;
   position: relative;
-  height: auto;
+  height: 100%;
   /*padding-top: 100px;*/
 }
 
@@ -1881,3 +1884,6 @@ html, body {
     color: #000;
     text-decoration: none;
 }
+
+
+

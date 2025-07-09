@@ -438,7 +438,6 @@ $(document).ready(function() {
     // Gallery
     // Gallery Initialization
     $('.tm-gallery').slick({
-        dots: true,
         arrows: true,
         infinite: true,
         autoplay: true, // <-- CHANGE THIS TO TRUE

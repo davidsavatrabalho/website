@@ -188,14 +188,21 @@ ok.
 09.07
 
 - ajeitar margin-bottom seção impacto, 
+- efeito parallax contato, 
+- tamanho figure honney ajustar, 
+
+ok
+
+10.07
+
+- adicionar logo seção impacto;
+- adicionar seção para ebooks e material de estudo;
 
 
 
 
-https://en.uesp.net/wiki/Special:EsoBuildData?id=598259
-https://en.uesp.net/wiki/Special:EsoBuildData?id=598012
 
-
+- ~6438 weapon dmg, cru, buff 20%; ~6800 rally cry, ~7700 spec bow, ~8300 minor bers, ~9200 cont attack, ~10.3k ess thief;
 
 
 

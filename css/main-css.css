@@ -1329,23 +1329,24 @@ figure.effect-honey:hover h2 i {
 
 /* Custom styles for coach image */
 .coach-image {
-    width: 256px; /* Equivalent to w-64 */
+    width: 246px; /* Equivalent to w-64 */
     height: 256px; /* Equivalent to h-64 */
     object-fit: cover;
-    object-position: top;
+    object-position: right;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-2xl */
     transition: transform 0.3s ease-in-out; /* Equivalent to transition-transform duration-300 ease-in-out */
 }
 
+
 @media (min-width: 768px) { /* md breakpoint */
     .coach-image {
-        width: 320px; /* Equivalent to md:w-80 */
+        width: 280px; /* Equivalent to md:w-80 */
         height: 320px; /* Equivalent to md:h-80 */
     }
 }
 @media (min-width: 1024px) { /* lg breakpoint */
     .coach-image {
-        width: 384px; /* Equivalent to lg:w-96 */
+        width: 334px; /* Equivalent to lg:w-96 */
         height: 384px; /* Equivalent to lg:h-96 */
     }
 }

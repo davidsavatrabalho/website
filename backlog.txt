@@ -202,13 +202,6 @@ ok
 
 
 
-- ~6438 weapon dmg, cru, buff 20%; ~6800 rally cry, ~7700 spec bow, ~8300 minor bers, ~9200 cont attack, ~10.3k ess thief;
-
-
-
-
-
-
 
 
 
@@ -242,3 +235,11 @@ Mas a persistência faz vencer as resistências, a dureza que se é em andar sob
 auto-Perceções: Vida >>>>> Videos // Mente >>>>>>> feed feed your MIND.
 
 independente do jogo, o meta-game, mind, é o mesmo: ações, causas, condições, motivações, consequências, desenvolvimentos, tramas, eventualizações...
+
+
+- ~5.3k sem buff, 6.4k buff, ~6800 rally cry, ~7300 spec bow, ~7.8k weap ench, ~8300 minor bers, ~9200 cont attack, ~10.3k ess thief; + 300 por dual wield,
+
+- ~5.5k sem buff, ~6k weap ench, 7k buff, 7.5k rally cry, 8k spec bow, 8.8k cont attack, 9.3k minor bers, ~10.3k ess thief,
+
+https://en.uesp.net/wiki/Special:EsoBuildData?id=598012
+
